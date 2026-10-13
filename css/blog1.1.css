@@ -60,6 +60,32 @@ nav a { text-decoration: none; color: #555; margin-left: 25px; font-size: 14px; 
 /* 按钮样式 */
 .read-more-trigger { background: none; border: none; font-weight: bold; cursor: pointer; color: #333; margin-top: 20px; }
 
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+    min-height: 400px;
+    padding: 60px 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../images/blog.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+
 /* 简单动画 */
 @keyframes zoomIn {
     from { transform: scale(0.9); opacity: 0; }
