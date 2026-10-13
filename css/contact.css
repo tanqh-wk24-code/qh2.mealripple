@@ -1,0 +1,740 @@
+/* Navigation Bar Container */
+.navbar {
+    background-color: #a5bcc4; /* The specific blue-grey from your Education page */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a4a; /* Darker blue for contrast */
+}
+
+/* Menu Links Style */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #d37546; /* MealRipple brand orange */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  font-size: 10px;
+  /* INCREASED MARGIN: Space between the text and the arrow */
+  margin-left: 5px; 
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* Sits directly below the navbar */
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f8f9fa;
+  color: #ff6a00;
+  padding-left: 25px;
+}
+
+/* Highlighted Donate item */
+.donate-item {
+  
+  font-weight: 700 !important;
+}
+
+.donate-item:hover {
+  background: #fff5ee !important;
+}
+
+
+.music-control-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 117, 70, 0.8); /* 匹配你的品牌橙色 */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+
+#magic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 关键：允许点击下层的按钮 */
+    z-index: 9999;
+}
+
+.music-control-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.guide-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.guide-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* This class will be added by JS to hide the overlay */
+.hide-overlay {
+    opacity: 0!important;
+    visibility: hidden !important;
+}
+
+.click-icon { font-size: 3rem; margin-top: 20px; animation: bounce 2s infinite; }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+}
+
+
+:root {
+    --primary-orange: #d37546;
+    --beige-bg: #f3d9a2;
+    --beige: #f3e5ab;
+    --nav-bg: #a5bcc4;
+    --text-dark: #333;
+    --navy-blue:#3f6877;
+    --grey-blue:#818e93;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+
+
+/* Navigation */
+.navbar { background-color: var(--nav-bg); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; color: #1a3a4a; font-weight: bold; gap: 10px; }
+.logo img { height: 45px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+.nav-links a.active { border-bottom: 2px solid var(--primary-orange); }
+
+.get-in-touch-hero h1 {
+    font-size: 50px;
+}
+
+.get-in-touch-hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../IMAGES/contact.jpg') center/cover;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.btn-yellow-glow {
+    background-color: #f3d082; 
+    color: #333;             /* Dark text for better contrast on light yellow */
+    padding: 12px 30px;
+    border: none;            /* Removes default browser borders */
+    border-radius: 12px;     /* Matches your consistent rounded-corner theme */
+    font-weight: 700;        /* Makes the text bold and clear */
+    text-decoration: none;   /* Removes underline if using an <a> tag */
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Creates a smooth color change on hover */
+}
+
+.btn-yellow-glow:hover {
+    background-color: #e6c26f;
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Application Form */
+.form-container { padding: 60px 10%; text-align: center; }
+.application-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: left;
+    margin: 30px auto;
+    border: 1px solid #ddd;
+    max-width: 900px;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; }
+input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #fff; box-sizing: border-box; }
+.checkbox-group label { font-weight: normal; margin-right: 15px; }
+
+.btn-send-message {  background-color: #d37546; color: white; border: none; padding: 15px 40px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; transition: 0.3s; }
+.btn-send-message:hover { background-color: #b35d32; }
+
+/* Why Volunteer Section */
+.benefits-section { padding: 60px 10%; background: #fff; text-align: center; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+.benefit-box { padding: 25px; border-radius: 12px; color: white; transition: 0.3s; }
+.benefit-box:hover { transform: translateY(-5px); }
+.benefit-box.grey-blue { background: var(--grey-blue); }
+.benefit-box.navy { background: var(--navy-blue); }
+.benefit-box.orange { background: var(--primary-orange); }
+
+
+
+/* Container for the checkbox and consent text */
+.consent-wrapper {
+    display: flex;
+    align-items: flex-start; /* Align checkbox to the top of the text */
+    gap: 10px;               /* Space between checkbox and text */
+    margin: 20px 0;          /* Spacing between the inputs above and button below */
+    text-align: left;        /* Ensures text remains left-aligned */
+}
+
+/* Custom Checkbox Styling */
+.consent-wrapper input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;         /* Fine-tuning to center with the first line of text */
+    cursor: pointer;
+    flex-shrink: 0;          /* Prevents the checkbox from shrinking when text wraps */
+}
+
+/* Consent Text Styling */
+.consent-wrapper label {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* Submit Application Button */
+.btn-submit-app {
+    width: 100%;             /* Full width as per image */
+     background-color: #d37546; /* The specific orange-red brand color */
+    color: white;
+    border: none;
+    padding: 16px;           /* Thick padding for a substantial look */
+    border-radius: 8px;      /* Rounded corners from design */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit-app:hover {
+    background-color: #b5623a; /* Slightly darker on hover */
+}
+
+/* Small Sub-text */
+.sub-consent-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.btn-submit:hover {
+    background-color: #b5623a; /* Darker orange on hover */
+}
+
+/* Small note below the button */
+.footer-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Responsive View */
+@media (max-width: 900px) {
+    .form-grid, .benefits-grid, .contact-dual-grid, .office-layout { grid-template-columns: 1fr; flex-direction: column; }
+}
+
+:root {
+    --mealripple-orange: #d37546; /* Matching the brand orange in images */
+    --input-bg: rgba(117, 116, 116, 0.07);       /* Light grey for inputs */
+    --text-dark: #333;
+}
+
+/* Section Background with Gradient */
+.contact-message-section {
+    background: linear-gradient(135deg, #ffffff 50%, #f7d7c4 100%);
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.message-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+    
+    
+}
+
+/* Left Content Styles */
+.message-content {
+    flex: 1;
+    
+}
+
+.message-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-group {
+    margin-bottom: 25px;
+}
+
+.info-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-group a, .info-group p {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Right Form Card Styles */
+.message-form-card {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 30px; /* Highly rounded corners from image */
+    box-shadow: 0 15px 40px rgba(177, 177, 177, 0.1);
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Input/Select/Textarea Styling */
+.form-field input, 
+.form-field select, 
+.form-field textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 12px; /* Rounded corners for inputs */
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.btn-send-message {
+    width: 100%;
+    background-color: var(--mealripple-orange);
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-send-message:hover {
+    background-color: #b5623a;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .message-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .message-form-card {
+        text-align: left;
+    }
+}
+
+.visit-office {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.section-title { font-size: 2.5rem; margin-bottom: 10px; }
+.section-subtitle { margin-bottom: 40px; color: #555; max-width: 800px; margin-inline: auto; }
+
+/* Layout Wrapper: Centers content and creates the 50/50 split */
+.location-wrapper {
+    display: flex;          /* Enables Flexbox */
+    align-items: stretch;   /* Ensures left and right columns have equal height */
+    gap: 30px;              /* Space between the info cards and the map */
+    max-width: 1200px;
+    margin: 0 auto;         /* Centers the section horizontally */
+}
+
+
+/* Left Column: Occupies exactly half the width */
+.contact-info {
+    flex: 1;                /* Occupies 1 part of the available space */
+    width: 50%;             /* Explicitly sets base width to 50% */
+    display: flex;
+    flex-direction: column; /* Stacks cards vertically */
+    gap: 15px;              /* Space between each card */
+}
+
+/* Right Column: Occupies exactly half the width */
+.map-section {
+    flex: 1;                /* Occupies 1 part of the available space */
+    width: 50%;             /* Explicitly sets base width to 50% */
+}
+
+
+
+
+
+.info-card {
+    display: flex;             /* 开启 Flex 布局，让图标和文字并排 */
+    align-items: center;       /* 垂直居中对齐，确保图标和文字的中线一致 */
+    padding: 20px 91px;        /* 增加内边距，让内容不拥挤 */
+    border-radius: 15px;       /* 匹配你图片中的圆角 */
+    gap: 40px;                 /* 在图标和文字之间留出固定间距 */
+    text-align: left;          /* 确保文字向左对齐 */
+}
+
+/* 针对图标的微调 */
+.info-card i, .info-card img {
+    font-size: 24px;           /* 统一图标大小 */
+    width: 41px;               /* 固定宽度，防止不同图标宽度不同导致文字对不齐 */
+    display: flex;
+    justify-content: center;   /* 图标内部居中 */
+}
+
+/* 针对文字内容的微调 */
+.card-text {
+    display: flex;
+    flex-direction: column;    /* 让标题和具体信息上下排列 */
+    justify-content: center;
+}
+
+.card-text h3 {
+    margin: 0;                 /* 去掉标题自带的间距 */
+    font-size: 1.1rem;
+}
+
+.card-text p {
+    margin: 34px 0 0 0;         /* 只保留顶部的一点间距 */
+    font-size: 0.9rem;
+}
+
+/* Right Column: Occupies exactly half the width */
+.map-section {
+    flex: 1;                /* Occupies 1 part of the available space */
+    width: 50%;             /* Explicitly sets base width to 50% */
+}
+
+
+
+/* Specific Card Colors based on your design */
+.dark-blue { background-color: #4a5d73; color: white; }
+.peach     { background-color: #e6b39a; }
+.yellow    { background-color: #f5e3b5; }
+.grey      { background-color: #d1d5db; }
+
+/* Map Container: Fills the entire right-side 50% area */
+.map-container {
+    width: 100%;
+    height: 100%;           /* Fills the height of the left side automatically */
+    min-height: 450px;      /* Minimum height for smaller screens */
+    border-radius: 50px;    /* Matches the large rounded corners in your image */
+    overflow: hidden;       /* Essential: Clips the square map into the rounded shape */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Iframe (Dynamic Map) Styling */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;           /* Removes default browser border */
+}
+
+/* Responsive: Switches to a single column on mobile devices */
+@media (max-width: 768px) {
+    .location-wrapper {
+        flex-direction: column;
+    }
+    .contact-info, .map-section {
+        width: 100%;        /* Cards and Map stack at 100% width on mobile */
+    }
+}
+
+
+
+
+
+#backToTop {
+    display: none;             /* Hidden by default */
+    position: fixed;
+    bottom: 100px;             /* Increased to sit ABOVE the music icon */
+    right: 19px;               /* Aligned with the side */
+    z-index: 999;              /* High z-index to stay on top of other elements */
+    
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Matching your brand orange */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px); /* Subtle float effect on hover */
+}
+
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #a5bcc4; /* Your brand's signature blue-grey */
+    color: #1a3a4a;
+    padding: 60px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Column Formatting */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1a3a4a;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1a3a4a;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #d37546; /* Brand orange hover effect */
+}
+
+/* Logo and Slogan Styling */
+.brand-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.brand-info img {
+    height: 48px;
+}
+
+.brand-info p {
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.contact-icon {
+    width: 20px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 25px 5% 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Social Media Links */
+/* Container: Pushes text to the left and icons to the right */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Wrapper */
+/* Ensures the parent container aligns items horizontally */
+.social-media-footer {
+    display: flex;            /* Enables Flexbox layout */
+    flex-direction: row;      /* Arranges items in a horizontal row (default) */
+    gap: 15px;                /* Sets the spacing between each icon circle */
+    align-items: center;      /* Vertically centers icons within the footer bar */
+}
+
+/* Styling for the circular icon background */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50%;       /* Creates the perfect circle shape */
+    display: flex;            /* Centers the icon/image inside the circle */
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    text-decoration: none;    /* Removes underlines from the link */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Scaling and fitting for image-based logos */
+.social-icon img {
+    width: 60%;               /* Logo takes up 60% of the circle width */
+    height: auto;             /* Maintains aspect ratio */
+    object-fit: contain;      /* Ensures the logo fits entirely without cropping */
+    display: block;
+}
+
+/* Floating Hover Animation */
+.social-icon:hover {
+    transform: translateY(-5px); /* Lifts the icon up by 5 pixels */
+    background-color: #f8f9fa;   /* Changes background to a very light grey */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Deepens the shadow while floating */
+}

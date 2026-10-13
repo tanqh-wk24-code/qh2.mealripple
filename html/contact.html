@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/contact.css">
+   
+</head>
+<body>
+      <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+    
+    <section class="get-in-touch-hero">
+    <div class="hero-overlay">
+        <h1>Get in Touch</h1>
+        <p>We're here to answer your questions and explore collaborations.<br>
+           Let's work together to end hunger.</p>
+        <a href="../html/contact.html" class="btn-yellow-glow">Send a Message</a>
+    </div>
+</section>
+
+    <section class="form-container">
+        <h2>Ready to Join Us?</h2>
+        <p class="subtitle">Feel free to become part of our volunteer community.</p>
+        
+        <div class="application-card">
+           <h3>Volunteer Application Form</h3>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="012-345 6789">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" placeholder="Your city">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Volunteer Role Preference</label>
+                    <select>
+                        <option>Select a role...</option>
+                        <option>Food Prep</option>
+                        <option>Distribution</option>
+                        <option>Education</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Availability</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Weekday Mornings</label>
+                        <label><input type="checkbox"> Weekday Afternoons</label>
+                        <label><input type="checkbox"> Weekends</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Why do you want to volunteer with MealRipple?</label>
+                    <textarea rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Relevant Skills or Experience (Optional)</label>
+                    <textarea rows="4"></textarea>
+                </div>
+
+                <div class="form-footer">
+                        <div class="consent-wrapper">
+                                <input type="checkbox" id="consent-check" required>
+                                <label for="consent-check">
+        By submitting this form, you consent to MealRipple contacting you about volunteer opportunities.
+    </label>
+</div>
+<button type="submit" class="btn-submit-app">Submit application</button>
+   
+</div>
+            </form>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h3>Why Volunteer With Us?</h3>
+        <p>Volunteering with MealRipple is more than just a donation of time; it’s an opportunity to grow, connect, and create lasting change.</p>
+        <div class="benefits-grid">
+            <div class="benefit-box grey-blue"><h4>Make Real Impact</h4><p>See the direct results of your efforts in the community.</p></div>
+            <div class="benefit-box navy"><h4>Join a Community</h4><p>Connect with like-minded people dedicated to making a difference.</p></div>
+            <div class="benefit-box orange"><h4>Gain Experience</h4><p>Develop valuable skills in resources management and teamwork.</p></div>
+            <div class="benefit-box orange"><h4>Learn & Grow</h4><p>The stories you tell and images you see help you reach and learn more.</p></div>
+            <div class="benefit-box navy"><h4>Feel Fulfilled</h4><p>Experience the personal satisfaction of helping those in need.</p></div>
+            <div class="benefit-box grey-blue"><h4>Build Your Resume</h4><p>Add meaningful, impactful volunteer work to your professional profile.</p></div>
+        </div>
+    </section>
+
+  <section class="contact-message-section">
+    <div class="message-container">
+        <div class="message-content">
+            <h2>Send Us a Message</h2>
+            <p>Whether you have a question, feedback, or are interested in collaborating with us, we'd love to hear from you. Fill out the form and our team will respond as soon as possible.</p>
+            
+            <div class="info-group">
+                <h3>Email Us</h3>
+                <p><a href="mailto:MealRipple@gmail.com">MealRipple@gmail.com</a></p>
+            </div>
+            
+            <div class="info-group">
+                <h3>Response Time</h3>
+                <p>We typically reply within 24-48 hours</p>
+            </div>
+            
+            <div class="info-group">
+                <h3>Privacy</h3>
+                <p>Your information is safe and never shared with third parties</p>
+            </div>
+        </div>
+
+        <div class="message-form-card">
+            <form>
+                <div class="form-field">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your email@example.com" required>
+                </div>
+                
+                <div class="form-field">
+                    <label>Category</label>
+                    <select required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="partnership">Partnerships</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+                
+                <div class="form-field">
+                    <label>Message</label>
+                    <textarea placeholder="Tell us more about your inquiry or feedback" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-send-message">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+    
+    <section class="visit-office">
+    <div class="container">
+        <h2>Visit Our Office</h2>
+        <p class="subtitle">We welcome visitors, volunteers, and partners.
+            <br>Stop by to learn more about our mission or schedule a meeting with our team.</p>
+        <br>
+        <br>
+
+        <div class="location-wrapper">
+            <div class="contact-info">
+                <div class="info-card dark-blue">
+                    <div class="icon">📍</div>
+                    <div>
+                        <h3>Office Address</h3>
+                        <p>123 Hope Street, Community Center<br>San Francisco, CA 94102, USA</p>
+                    </div>
+                </div>
+                <div class="info-card peach">
+                    <div class="icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>General: contact@mealripple.org</p>
+                    </div>
+                </div>
+                <div class="info-card yellow">
+                    <div class="icon">📞</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>Main Office: 012-3456789</p>
+                    </div>
+                </div>
+                <div class="info-card grey">
+                    <div class="icon">🕒</div>
+                    <div>
+                        <h3>Office Hours</h3>
+                        <p>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday: 10:00 AM – 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123!2d-122.4216!3d37.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzU5LjkiTiAxMjLCsDI1JzE3LjgiVw!5e0!3m2!1sen!2sus!4v123456789" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+ 
+
+
+    
+    
+      <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+          <span id="goupicon">🢁</span>
+</button>
+    
+         <script src="../js/contact.js"></script>
+    
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+
+
+</body>
+</html>

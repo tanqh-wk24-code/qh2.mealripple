@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../css/gallery.css">
+</head>
+    
+<body>
+    <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Our Gallery</h1>
+                <p>Witness the power of community, compassion, and collective action through our visual journey of hope and transformation.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+   <section class="gallery-subpage">
+    <main class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="../images/gallery1.jpg" alt="Activity 1" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery2.jpg" alt="Activity 2" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery3.jpg" alt="Activity 3" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery4.jpg" alt="Activity 4" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery5.jpg" alt="Activity 5" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery6.jpg" alt="Activity 6" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery7.jpg" alt="Activity 7" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery8.jpg" alt="Activity 8" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery9.jpg" alt="Activity 9" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery10.jpg" alt="Activity 10" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery11.jpg" alt="Activity 11" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery12.jpg" alt="Activity 12" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery13.jpg" alt="Activity 13" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery14.jpg" alt="Activity 14" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery15.jpg" alt="Activity 15" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery16.jpg" alt="Activity 16" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery17.jpg" alt="Activity 17" onclick="showImage(this.src)"></div>
+            <div class="gallery-item"><img src="../images/gallery18.jpg" alt="Activity 18" onclick="showImage(this.src)"></div>
+        </div>
+    </main>
+    </section>
+ 
+<div id="imageModal" class="modal" onclick="closeImage()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    <div id="caption"></div>
+    </div>
+
+  
+    
+
+
+<section class="social-section">
+        <h3>Follow us on social media for daily updates</h3>
+        <div class="social-buttons">
+            
+          
+        <a href="https://facebook.com" class="social-btn">
+            <img src="../images/facebook.png" alt="FB" class="btn-icon">
+            <span>Facebook</span>
+        </a>
+
+        <a href="https://instagram.com" class="social-btn">
+            <img src="../images/instagram.png" alt="IG" class="btn-icon">
+            <span>Instagram</span>
+        </a>
+            
+               <a href="https://www.xiaohongshu.com/explore" class="social-btn">
+            <img src="../images/rednote.png" alt="IG" class="btn-icon">
+            <span>Rednote</span>
+        </a>
+    </div>
+
+       
+    </section>
+    
+    
+ <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+     <span id="goupicon">🢁</span>
+</button>
+
+    <script src="../js/gallery.js"></script>
+    
+   <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+                
+</body>
+</html>

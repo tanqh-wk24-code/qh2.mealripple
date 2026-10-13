@@ -1,0 +1,745 @@
+/* Navigation Bar Container */
+.navbar {
+    background-color: #a5bcc4; /* The specific blue-grey from your Education page */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a4a; /* Darker blue for contrast */
+}
+
+/* Menu Links Style */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #d37546; /* MealRipple brand orange */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  font-size: 10px;
+  /* INCREASED MARGIN: Space between the text and the arrow */
+  margin-left: 5px; 
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* Sits directly below the navbar */
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f8f9fa;
+  color: #ff6a00;
+  padding-left: 25px;
+}
+
+/* Highlighted Donate item */
+.donate-item {
+  
+  font-weight: 700 !important;
+}
+
+.donate-item:hover {
+  background: #fff5ee !important;
+}
+
+
+.music-control-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 117, 70, 0.8); /* 匹配你的品牌橙色 */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+
+#magic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 关键：允许点击下层的按钮 */
+    z-index: 9999;
+}
+
+.music-control-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.guide-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.guide-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* This class will be added by JS to hide the overlay */
+.hide-overlay {
+    opacity: 0!important;
+    visibility: hidden !important;
+}
+
+.click-icon { font-size: 3rem; margin-top: 20px; animation: bounce 2s infinite; }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+}
+
+
+:root {
+    --primary-orange: #d37546;
+    --beige-bg: #f3d9a2;
+    --beige: #f3e5ab;
+    --nav-bg: #a5bcc4;
+    --text-dark: #333;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+
+
+/* Navigation */
+.navbar { background-color: var(--nav-bg); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; color: #1a3a4a; font-weight: bold; gap: 10px; }
+.logo img { height: 45px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+.nav-links a.active { border-bottom: 2px solid var(--primary-orange); }
+
+
+
+/* Hero */
+.edu-hero {
+    background: url('../images/education.jpg') center/cover no-repeat;
+    height: 500px;
+    position: relative;
+    color: white;
+}
+.hero-overlay {
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+.hero-overlay h1 { font-size: 3.5rem; margin-bottom: 10px; line-height: 1.1; }
+.hero-btns { margin-top: 25px; display: flex; gap: 15px; }
+.btn { padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+/* Styling for the primary 'Explore Resources' button */
+.btn-primary {
+    /* Using the yellow hex code from your design */
+    background-color: #f3d082; 
+    color: #333;             /* Dark text for better contrast on light yellow */
+    padding: 12px 30px;
+    border: none;            /* Removes default browser borders */
+    border-radius: 12px;     /* Matches your consistent rounded-corner theme */
+    font-weight: 700;        /* Makes the text bold and clear */
+    text-decoration: none;   /* Removes underline if using an <a> tag */
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Creates a smooth color change on hover */
+}
+
+/* Hover effect to make the button interactive */
+.btn-primary:hover {
+    background-color: #e6c26f; /* Slightly darker yellow when hovered */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-outline {
+    background-color: rgba(60, 50, 30, 0.6); /* Translucent dark brown */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline:hover {
+    
+    transform: translateY(-2px); /* Subtle lift effect */
+    
+    background-color: rgba(60, 50, 30, 0.8);
+    border-color: #ffffff;
+    
+}
+
+/* Stats Section */
+.edu-section { padding: 60px 10%; text-align: center; }
+.section-title { font-size: 2rem; margin-bottom: 15px; }
+.section-subtitle { max-width: 800px; margin: 0 auto 40px; color: #666; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.stat-card { padding: 30px; border-radius: 20px; color: white; }
+.stat-card i { font-size: 2.5rem; margin-bottom: 15px; }
+.dark-gray { background: #5a6268; }
+.dark-blue { background: #4a697d; }
+.light-orange { background: #e6a26c; }
+.dark-orange { background: var(--primary-orange); }
+
+/* Hover State: The "Lift" and Shadow Effect */
+.stat-card:hover {
+    /* Moves the card up by 10 pixels vertically */
+    transform: translateY(-10px); 
+    
+    /* Adds a subtle shadow to give a 'floating' appearance */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Optional: Brighten the brand colors on hover */
+.dark-gray:hover    { background-color: #626a71; }
+.dark-blue:hover    { background-color: #5d7a8c; }
+.light-orange:hover { background-color: #f2c2ab; }
+.dark-orange:hover  { background-color: #e88b5d; }
+
+/* Stats Section Styling */
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Brand Colors */
+.dark-gray    { background-color: #545b62; }
+.dark-blue    { background-color: #4a6d81; }
+.light-orange { background-color: #e6b39a; }
+.dark-orange  { background-color: #d47a54; }
+
+.stat-card h3 { font-size: 2rem; font-variant-numeric: tabular-nums; }
+
+/* 1. Grid Container: No longer forces uniform height */
+.resource-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* KEY: Cards grow independently based on content */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* 2. Individual Card: Standard vertical stack */
+.resource-card {
+    flex: 1; /* All three cards still share width equally */
+    display: flex;
+    flex-direction: column;
+    background-color: #f5e3b5; /* Yellow theme */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 3. Card Header: Padding only */
+.card-header {
+    padding: 20px;
+    /* Removed flex-grow to prevent the yellow area from stretching */
+}
+
+/* 4. Card Body: Compact white footer */
+.card-body {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    /* Removed margin-top: auto and flex-grow: 1 to allow individual heights */
+}
+
+/* 5. Hidden Content: Expands the specific card body when shown */
+.extra-content {
+    display: none; /* Initially hidden */
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+/* 5. 按钮：始终固定在白色区域的最下方 */
+.toggle-btn {
+    margin-top: auto; /* 将按钮推到白色区域的最底端 */
+    padding: 10px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+.toggle-btn:hover {
+    color: #555;
+    background-color: rgba(0,0,0,0.02);
+}
+
+
+
+/* Challenges (Pill Design) */
+.challenge-container { display: flex; gap: 40px; margin-top: 40px; }
+.challenge-box { flex: 1; text-align: left; }
+.pill-title { 
+    background-color: #d37546; /* Brand orange color */
+    color: white; 
+    padding: 10px 40px; 
+    border-radius: 30px; 
+    display: inline-block; 
+    margin-bottom: 20px;
+}
+
+.resources-section {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.resource-card {
+    border: 1px solid #c0c0c0; /* Gray border around the whole card */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background-color: #f5e1a4; /* Specific beige/yellow color from design */
+    padding: 25px 20px;
+    min-height: 160px;
+}
+
+.category-label {
+    font-size: 12px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.summary {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #444;
+}
+
+.card-body {
+    padding: 0 20px 20px;
+    background: #fff;
+}
+
+
+
+.extra-content {
+    display: none; /* Hidden until "Show More" is clicked */
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+}
+
+.extra-content p {
+    margin-bottom: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.toggle-btn .icon {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .resource-grid { grid-template-columns: 1fr; }
+}
+
+.events-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ensures smooth motion */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+/* Hover State */
+.event-card:hover {
+    transform: translateY(-10px); /* Lifts the card up by 10 pixels */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Adds depth with a larger shadow */
+}
+
+.img-container {
+    position: relative;
+    height: 200px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.status-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.online { background-color: #4cd137; }
+.in-person { background-color: #44bd32; }
+
+.event-info { padding: 20px; }
+
+.event-info h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.meta {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tag-list {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-list span {
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.btn-join {
+    display: block;
+    background-color: #d37546; /* MealRipple Orange */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-join:hover {
+    background-color: #b35d32;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .events-grid { grid-template-columns: 1fr; }
+}
+
+#backToTop {
+    display: none;             /* Hidden by default */
+    position: fixed;
+    bottom: 100px;             /* Increased to sit ABOVE the music icon */
+    right: 19px;               /* Aligned with the side */
+    z-index: 999;              /* High z-index to stay on top of other elements */
+    
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Matching your brand orange */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px); /* Subtle float effect on hover */
+}
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #a5bcc4; /* Your brand's signature blue-grey */
+    color: #1a3a4a;
+    padding: 60px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Column Formatting */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1a3a4a;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1a3a4a;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #d37546; /* Brand orange hover effect */
+}
+
+/* Logo and Slogan Styling */
+.brand-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.brand-info img {
+    height: 48px;
+}
+
+.brand-info p {
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.contact-icon {
+    width: 20px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 25px 5% 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Social Media Links */
+/* Container: Pushes text to the left and icons to the right */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Wrapper */
+/* Ensures the parent container aligns items horizontally */
+.social-media-footer {
+    display: flex;            /* Enables Flexbox layout */
+    flex-direction: row;      /* Arranges items in a horizontal row (default) */
+    gap: 15px;                /* Sets the spacing between each icon circle */
+    align-items: center;      /* Vertically centers icons within the footer bar */
+}
+
+/* Styling for the circular icon background */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50%;       /* Creates the perfect circle shape */
+    display: flex;            /* Centers the icon/image inside the circle */
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    text-decoration: none;    /* Removes underlines from the link */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Scaling and fitting for image-based logos */
+.social-icon img {
+    width: 60%;               /* Logo takes up 60% of the circle width */
+    height: auto;             /* Maintains aspect ratio */
+    object-fit: contain;      /* Ensures the logo fits entirely without cropping */
+    display: block;
+}
+
+/* Floating Hover Animation */
+.social-icon:hover {
+    transform: translateY(-5px); /* Lifts the icon up by 5 pixels */
+    background-color: #f8f9fa;   /* Changes background to a very light grey */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Deepens the shadow while floating */
+}

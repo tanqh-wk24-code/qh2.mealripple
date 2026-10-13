@@ -1,0 +1,690 @@
+/* Navigation Bar Container */
+.navbar {
+    background-color: #a5bcc4; /* The specific blue-grey from your Education page */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a4a; /* Darker blue for contrast */
+}
+
+/* Menu Links Style */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #d37546; /* MealRipple brand orange */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  font-size: 10px;
+  /* INCREASED MARGIN: Space between the text and the arrow */
+  margin-left: 5px; 
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* Sits directly below the navbar */
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f8f9fa;
+  color: #ff6a00;
+  padding-left: 25px;
+}
+
+/* Highlighted Donate item */
+.donate-item {
+  
+  font-weight: 700 !important;
+}
+
+.donate-item:hover {
+  background: #fff5ee !important;
+}
+
+
+.music-control-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 117, 70, 0.8); /* 匹配你的品牌橙色 */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+
+#magic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 关键：允许点击下层的按钮 */
+    z-index: 9999;
+}
+
+.music-control-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.guide-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.guide-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* This class will be added by JS to hide the overlay */
+.hide-overlay {
+    opacity: 0!important;
+    visibility: hidden !important;
+}
+
+.click-icon { font-size: 3rem; margin-top: 20px; animation: bounce 2s infinite; }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+}
+
+
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+
+
+/* Navigation */
+.navbar { background-color: var(--nav-bg); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; color: #1a3a4a; font-weight: bold; gap: 10px; }
+.logo img { height: 45px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+.nav-links a.active { border-bottom: 2px solid var(--primary-orange); }
+
+
+
+/* Global Brand Variables */
+:root {
+    --primary-orange: #d37546;    /* Button & link highlights */
+        --beige-bg: #f3d9a2;
+    --beige: #f3e5ab;
+    --nav-bg: #a5bcc4;           /* Header & Footer background */
+    --badge-green: #4cd137;      /* Category labels (e.g., Education) */
+    --text-dark: #333333;        /* Main headings */
+    --text-light: #777777;       /* Body and meta text */
+    --white: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+/* Blog Hero Banner (Wood Block Background) */
+.blog-banner {
+    /* Matches the wood block "B L O G" image in your design */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('../IMAGES/blog.jpg') center/cover no-repeat;
+    height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Darkens the image to make white text pop */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.banner-overlay h1 { 
+    font-size: 3.5rem; 
+    margin: 0; 
+    font-weight: 700;
+}
+
+.banner-overlay p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+/* Main Blog Container */
+.blog-container {
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 3-Column Grid Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* Blog Card Design */
+.blog-card {
+    background: var(--white);
+    border-radius: 15px; /* Smooth rounded corners from design */
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Card Image & Green Badge */
+.card-image {
+    position: relative;
+    height: 220px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* Card Content Area */
+.card-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Clips text to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+
+/* Meta Data (Author & Date) */
+.card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 15px;
+    border-top: 1px solid #f9f9f9;
+    padding-top: 15px;
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.card-meta i { 
+    margin-right: 6px; 
+    color: var(--primary-orange);
+}
+
+.read-more {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: var(--primary-orange);
+}
+
+/* Responsive: 1 column for tablets and mobile */
+@media (max-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .banner-overlay h1 { font-size: 2.5rem; }
+}
+
+#backToTop {
+    display: none;             /* Hidden by default */
+    position: fixed;
+    bottom: 100px;             /* Increased to sit ABOVE the music icon */
+    right: 19px;               /* Aligned with the side */
+    z-index: 999;              /* High z-index to stay on top of other elements */
+    
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Matching your brand orange */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px); /* Subtle float effect on hover */
+}
+
+/* 主文章卡片样式 (图1) */
+.main-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+.img-box { position: relative; width: 100%; }
+.img-box img { width: 100%; height: auto; display: block; }
+.content { padding: 30px; }
+.content h2 { font-size: 28px; margin-bottom: 15px; }
+
+/* 标签样式 */
+.badge { position: absolute;background-color: #4cd137;top: 20px; left: 20px; right: 265px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge1 { position: absolute; background-color: #4cd137; top: 20px; left: 20px; right: 290px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge2 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 240px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge3 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 270px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge4 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 275px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge5 { position: absolute; background-color: #4cd137; top: 20px; left: 20px; right: 315px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge6 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 290px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge7 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 275px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badge8 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 270px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+
+
+
+.badgeimpact{ position: absolute;background-color: #4cd137; top: 20px; left: 20px; right: 660px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact1  { position: absolute; background-color: #4cd137; top: 20px; left: 20px; right: 690px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact2 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 640px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact3 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 670px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact4 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 675px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact5 { position: absolute; background-color: #4cd137; top: 20px; left: 20px; right: 710px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact6 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 690px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact7 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 675px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.badgeimpact8 { position: absolute;  background-color: #4cd137;top: 20px; left: 20px; right: 670px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+
+
+/* 弹窗遮罩层 */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* 默认隐藏 */
+  justify-content: center;
+   
+  z-index: 1000;
+    
+align-items: flex-start; 
+    overflow-y: auto; 
+    padding: 4px 20px; /* 增加上下边距，防止内容贴边 */
+}
+
+
+
+
+/* 弹窗主体 - 让格子变大 */
+.modal-content {
+  position: relative;
+  background: white;
+  
+  /* 宽度调整：从 400px 增加到 700px */
+  width: 100%; 
+  max-width: 800px; 
+  
+  /* 增加圆角，更符合图中的高级感 */
+  border-radius: 20px; 
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+    
+
+
+
+/* 增加图片高度，让大格子更协调 */
+.modal-content .image-container img {
+  width: 100%;
+  height: 350px; /* 固定高度或根据比例调整 */
+  object-fit: cover; /* 确保图片不拉伸 */
+}
+
+/* 增加文字内容的内边距，让呼吸感更强 */
+.modal-content .card-content {
+  padding: 40px; /* 从 20px 增加到 40px */
+}
+
+/* 调大标题字号 */
+.modal-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 调大正文字号 */
+.modal-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3b3b3b;
+  margin-bottom: 25px;
+    font:bold;
+}
+
+/* 调大正文字号 */
+.modal-content h4 {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.close-btn {
+  position: absolute; top: 10px; right: 15px; font-size: 25px;
+  color: white; cursor: pointer; z-index: 10;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+button { background: none; border: none; color: #333; font-weight: bold; cursor: pointer; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-card .img-box img { height: 435px; object-fit: cover; } /* 增加图片高度 */
+
+.modal-card .content { padding: 40px; } /* 增加内边距，呼吸感 */
+.modal-card h2 { font-size: 32px; margin-bottom: 20px; }
+
+/* 关闭按钮在标签内 */
+.close-x {
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 1;
+    padding-left: 600px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+
+
+
+
+/* 简单动画 */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #a5bcc4; /* Your brand's signature blue-grey */
+    color: #1a3a4a;
+    padding: 60px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Column Formatting */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1a3a4a;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1a3a4a;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #d37546; /* Brand orange hover effect */
+}
+
+/* Logo and Slogan Styling */
+.brand-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.brand-info img {
+    height: 48px;
+}
+
+.brand-info p {
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.contact-icon {
+    width: 20px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 25px 5% 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Social Media Links */
+/* Container: Pushes text to the left and icons to the right */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Wrapper */
+/* Ensures the parent container aligns items horizontally */
+.social-media-footer {
+    display: flex;            /* Enables Flexbox layout */
+    flex-direction: row;      /* Arranges items in a horizontal row (default) */
+    gap: 15px;                /* Sets the spacing between each icon circle */
+    align-items: center;      /* Vertically centers icons within the footer bar */
+}
+
+/* Styling for the circular icon background */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50%;       /* Creates the perfect circle shape */
+    display: flex;            /* Centers the icon/image inside the circle */
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    text-decoration: none;    /* Removes underlines from the link */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Scaling and fitting for image-based logos */
+.social-icon img {
+    width: 60%;               /* Logo takes up 60% of the circle width */
+    height: auto;             /* Maintains aspect ratio */
+    object-fit: contain;      /* Ensures the logo fits entirely without cropping */
+    display: block;
+}
+
+/* Floating Hover Animation */
+.social-icon:hover {
+    transform: translateY(-5px); /* Lifts the icon up by 5 pixels */
+    background-color: #f8f9fa;   /* Changes background to a very light grey */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Deepens the shadow while floating */
+}

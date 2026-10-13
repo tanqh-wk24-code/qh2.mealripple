@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../css/home.css">
+    
+</head>
+<body>
+
+<header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+           
+           
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+           
+<div id="audio-guide">
+    <div class="guide-content">
+        <h2>Welcome to MealRipple</h2>
+        <p>Click anywhere to start the experience</p>
+        <div class="click-icon">👆</div>
+    </div>
+</div>
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+
+    <header class="home-hero">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1 class="hero-title">A Ripple of Hope Begins With One Meal</h1>
+            <p class="hero-subtitle">A space filled with warmth, stories, and shared moments.</p>
+            
+            <div class="hero-btns">
+                <a href="donate.html" class="btn btn-donate">Donate now</a>
+                <a href="gallery.html" class="btn btn-gallery">Gallery</a>
+            </div>
+        </div>
+    </div>
+
+</header>
+    
+
+    <section class="story-section">
+        <h2>Our story</h2>
+        <p class="story-intro">MealRipple was created with this simple idea. As a youth-driven, education-focused initiative, we aim to raise awareness 
+        <br>about hunger and food waste while empowering communities to take meaningful action.</p>
+        
+        <p>Through warm visual storytelling, interactive learning, and transparent tracking of impact, we make it easy for anyone—students, volunteers, or partners—to get involved. 
+        <br>Every step on our platform is designed to be accessible and transparent. We believe even the smallest act of sharing creates waves of change.</p>
+        
+        <div class="story-grid">
+            <div class="benefit-card">
+                <h3>Hunger Awareness</h3>
+                <p>Hunger Awareness & oil hunger issues</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Food Reduction</h3>
+                <p>Reduce waste, giving every meal value</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Food Rescue</h3>
+                <p>Connecting surplus to communities</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Community Impact</h3>
+                <p>Creating lasting social to communities together</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="campaign-section">
+        <h2>Current Featured Campaign</h2>
+        <p>Support our latest initiative and help more people in need.</p>
+        
+        <div class="campaign-banner">
+            <div class="campaign-img">
+                <img src="../images/camapign1.jpeg" alt="Winter Food Drive">
+                <span class="status-badge">Ongoing</span>
+            </div>
+            <div class="campaign-info">
+                <h3>Winter Food Drive Campaign</h3>
+                <p>Help us provide warm meals to vulnerable families during this cold winter season. Every donation you make brings hope to a family in need.</p>
+                
+                <div class="progress-container">
+            <div class="progress-labels">
+                <span>Raised</span>
+                <span id="percent-text">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" data-percentage="68%"></div>
+            </div>
+            <div class="progress-stats">
+                <span>RM34,000</span>
+                <span>Goal: RM50,000</span>
+            </div>
+        </div>
+
+        <a href="fund%20and%20campaign.html" class="btn-join">Join</a>
+                
+    </div>
+</div>
+    </section>
+
+   <section class="impact-section">
+    <div class="container">
+        <h2 class="section-title">Our Impact</h2>
+        <p class="section-subtitle">Through the power of community, we are creating real and meaningful change.</p>
+        
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3 class="impact-number">125,000+</h3>
+                <p class="impact-label">Meals Shared</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3 class="impact-number">3,500+</h3>
+                <p class="impact-label">Volunteers Joined</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="impact-number">RM200,000</h3>
+                <p class="impact-label">Funds Raised</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3 class="impact-number">45,000kg</h3>
+                <p class="impact-label">Food Saved</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="updates-section">
+    <div class="container">
+        <h2>Latest Updates</h2>
+        <p class="section-subtitle">Stay informed about our latest activities, partnerships, and community stories.</p>
+        
+        <div class="updates-grid">
+            <article class="update-card">
+                <img src="../images/gallery6.jpg" alt="Supermarket Partnership">
+                <div class="update-content">
+                    <p class="update-meta">December 5, 2025 — Partnership</p>
+                    <h4>Partnering with Local Supermarkets to Reduce Food Waste</h4>
+                    <p>We have collaborated with three major supermarkets to turn near-expiry food into nutritious meals for communities in need.</p>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <img src="../images/update2.jpg" alt="Volunteer Story">
+                <div class="update-content">
+                    <p class="update-meta">December 3, 2025 — Community Story</p>
+                    <h4>A Day in the Life of a Volunteer: Spreading Warmth</h4>
+                    <p>Follow volunteer Li Ming as he takes you through his day and shows how small actions can make a meaningful impact in the community.</p>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <img src="../images/update3.jpg" alt="Charity Gala">
+                <div class="update-content">
+                    <p class="update-meta">December 1, 2025 — Announcement</p>
+                    <h4>2026 New Year Charity Gala Coming Soon</h4>
+                    <p>You are warmly invited to join our annual charity event as we come together to bring hope to more families.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+    
+      <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+          <span id="goup-icon">🢁</span>
+</button>
+    
+    
+    <script src="../js/home.js"></script>
+    
+  <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+</body>
+</html>

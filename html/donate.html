@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="../css/donate.css">
+    
+</head>
+<body>
+
+    <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/home.html../html/index.html../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Make a Difference Today</h1>
+            <p>Simple, Safe, and Impactful Giving<br>
+                Every donation helps us fight hunger and reduce food waste in our communities. 
+Your generosity creates lasting change.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <header class="header">
+            <h1>Your Donation Creates Hope</h1>
+            <p>Every contribution, no matter the size, helps us provide meals and support to families in need.</p>
+        </header>
+
+        <main class="content-grid">
+            <section class="donation-card">
+                <div class="card-header">
+                    <span class="icon-heart">❤️</span>
+                    <h2>Make Your Donation</h2>
+                </div>
+
+                <div class="amount-section">
+                    <p class="label">Select Amount</p>
+                    <div class="amount-grid">
+                        <button class="amount-btn" data-value="25" data-meals="5">
+                            <strong>RM 25</strong>
+                            <span>Feed 5 families</span>
+                        </button>
+                        <button class="amount-btn active" data-value="50" data-meals="10">
+                            <strong>RM 50</strong>
+                            <span>Feed 10 families</span>
+                        </button>
+                        <button class="amount-btn" data-value="100" data-meals="20">
+                            <strong>RM 100</strong>
+                            <span>Feed 20 families</span>
+                        </button>
+                        <button class="amount-btn" data-value="250" data-meals="50">
+                            <strong>RM 250</strong>
+                            <span>Feed 50 families</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <button class="method-btn">Credit / Debit Card</button>
+                    <button class="method-btn">Bank Transfer</button>
+                </div>
+
+                <div class="secure-info">
+                    <div class="secure-badge">
+                        <span class="icon-check">✔️</span>
+                        <strong>Secure & Encrypted</strong>
+                    </div>
+                    <p>Your payment information is protected with bank-level encryption and security.</p>
+                </div>
+
+                <button class="donate-now-btn">Donate</button>
+            </section>
+
+            <aside class="info-sidebar">
+                <div class="impact-card">
+                    <h3><span class="icon">🧡</span> Your Impact</h3>
+                    <div class="impact-display">
+                        <h2 id="display-amount">RM50</h2>
+                        <p id="display-desc">Can provide approximately 10 meals to families in need</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <h3>Why Your Donation Matters</h3>
+                    <ul>
+                        <li>Provides nutritious meals to families</li>
+                        <li>Reduces food waste in communities</li>
+                        <li>Supports education programs</li>
+                        <li>Creates sustainable food systems</li>
+                    </ul>
+                </div>
+
+                <div class="tax-card">
+                    <h3><span class="icon">🔒</span> Tax Deductible</h3>
+                    <p>MealRipple is a 501(c)(3) nonprofit. Your donation is tax-deductible to the extent allowed by law.</p>
+                </div>
+            </aside>
+        </main>
+    </div>
+    
+    <div id="thank-you-modal" class="modal">
+    <div class="modal-content">
+        <span class="icon-success">✅</span>
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your generous donation.</p>
+        <button id="close-modal" class="close-btn">Close</button>
+    </div>
+</div>
+    
+<div class="container">
+    <header class="header">
+        <h1>Thank You Wall</h1>
+        <p>We're grateful to our amazing community of donors who make our mission possible.<br>
+        Every contribution creates lasting change.</p>
+    </header>
+
+    <div class="thank-you-grid">
+        <div class="card bg-grey">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>Sarah</h3>
+            </div>
+            <p class="quote">"Happy to support such a wonderful cause. Every meal counts!"</p>
+            <div class="card-footer">
+                <span class="amount">RM 1000</span>
+                <span class="date">Dec 9, 2025</span>
+            </div>
+        </div>
+
+        <div class="card bg-grey">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>TechCorp Inc.</h3>
+            </div>
+            <p class="quote">"Proud to partner with MealRipple in fighting hunger."</p>
+            <div class="card-footer">
+                <span class="amount">RM 500</span>
+                <span class="date">Nov 16, 2025</span>
+            </div>
+        </div>
+
+        <div class="card bg-yellow">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>Michael Chen</h3>
+            </div>
+            <p class="quote">"Small contribution, big impact together!"</p>
+            <div class="card-footer">
+                <span class="amount">RM 50</span>
+                <span class="date">Nov 11, 2025</span>
+            </div>
+        </div>
+
+        <div class="card bg-yellow">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>David & Amanda Smith</h3>
+            </div>
+            <p class="quote">"Together we can end hunger in our lifetime."</p>
+            <div class="card-footer">
+                <span class="amount">RM 100</span>
+                <span class="date">Nov 11, 2025</span>
+            </div>
+        </div>
+
+        <div class="card bg-orange">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>Washington Elementary</h3>
+            </div>
+            <p class="quote">"Our kids learn the value of giving back."</p>
+            <div class="card-footer">
+                <span class="amount">RM 400</span>
+                <span class="date">Jun 26, 2025</span>
+            </div>
+        </div>
+
+        <div class="card bg-orange">
+            <div class="card-header">
+                <div class="avatar">👤</div>
+                <h3>Emily Rodriguez</h3>
+            </div>
+            <p class="quote">"In memory of my grandmother who always fed the community."</p>
+            <div class="card-footer">
+                <span class="amount">RM 2000</span>
+                <span class="date">May 21, 2025</span>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="banner-section">
+    <div class="heart-icon">❤️</div>
+    <h2>Join Our Wall of Gratitude</h2>
+    <p>Your name could be here! Make a donation today and become part of our community of changemakers.</p>
+    <button class="donate-btn-gold">Donate now</button>
+</div>
+    
+    <section class="support-section">
+  <div class="container">
+    <header class="header">
+      <h2>Your Support Creates Hope</h2>
+      <p>Join our mission to fight hunger and reduce food waste. Together, we can build a better tomorrow.</p>
+    </header>
+        </div></section>
+    
+    <div class="options-container">
+    <div class="option-card">
+        <h3>Individual Giving</h3>
+        <p>Every donation, big or small, makes a real difference in someone's life.</p>
+        <ul>
+            <li>One-time or monthly donations</li>
+            <li>Tax-deductible contributions</li>
+            <li>Direct impact on local families</li>
+        </ul>
+        <button class="action-btn-orange">Donate Now</button>
+    </div>
+
+    <div class="option-card">
+        <h3>Corporate Partnership</h3>
+        <p>Partner with us to create lasting social impact through your business.</p>
+        <ul>
+            <li>Sponsorship opportunities</li>
+            <li>Food & product donations</li>
+            <li>Employee engagement programs</li>
+        </ul>
+        <button class="action-btn-orange">Become a Partners</button>
+    </div>
+</div>
+    
+  <section class="impact-section">
+  <div class="quote-background">
+    <div class="content-container">
+      <h2 class="display-quote">
+        "Together, we're not just feeding people — <br>
+        <span class="sub-text">we're building a community of hope and resilience."</span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="badge-grid">
+      <div class="trust-badge">
+        <h3>Secure Payments</h3>
+        <p>Bank-level encryption</p>
+      </div>
+      
+      <div class="trust-badge">
+        <h3>Transparent Reporting</h3>
+        <p>Bank-level encryption</p>
+      </div>
+      
+      <div class="trust-badge">
+        <h3>Tax Deductible</h3>
+        <p>501(c)(3) nonprofit</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+
+     <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+         <span id="goupicon">🢁</span>
+</button>
+    
+    <script src="../js/donate.js"></script>
+    
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+</body>
+</html>

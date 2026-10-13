@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../css/main%20blog.css">
+    
+</head>
+<body>
+
+    <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+
+    <header class="blog-banner">
+        <div class="banner-overlay">
+            <h1>MealRipple Blog</h1>
+            <p>Stories, insights, and updates from our mission to end hunger and 
+                <br>reduce food waste.</p>
+        </div>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-grid">
+            
+            <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/blog1.jpeg" alt="Community Kitchen">
+                    <span class="badge">Impact Stories</span>
+                </div>
+                <div class="card-body">
+                    <h3>How Community Kitchens Are Transforming Lives</h3>
+                    <p>Discover the impact of community kitchens in reducing food waste and feeding those in need across our...</p>
+                    <div class="card-meta">
+                        <span>👤 Sarah Johnson</span>
+                        <span>📅 Dec 8, 2025</span>
+                    </div>
+                    <button id="readMoreBtn"  class="read-more">Read More →</button>
+                </div>
+            </article>
+            
+     <div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog1.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact">Impact Stories</span>
+    </div>
+    <div class="card-content">
+      <h2>How Community Kitchens Are Transforming Lives</h2>
+        <div class="meta">
+        <span>👤 Sarah Johnson</span>
+        <span>📅 Dec 8, 2025</span>
+      </div>
+     <b> <p>Discover the impact of community kitchens in reducing food waste and feeding those in need across our...</p></b>
+      <h4>Community kitchens have become a cornerstone of our mission to combat hunger and reduce food waste. By partnering with local restaurants and grocery stores, we collect surplus food that would otherwise be discarded and transform it into nutritious meals. Our volunteer chefs and community members work together to create warm, delicious meals served with dignity and respect.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+            
+            
+            
+            
+            
+
+            <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/gallery9.jpg" alt="Understanding Food Insecurity">
+                    <span class="badge1">Education</span>
+                </div>
+                <div class="card-body">
+                    <h3>Understanding Food Insecurity in Our Communities</h3>
+                    <p>A deep dive into the statistics and stories behind food insecurity, and what we can do to make a difference.</p>
+                    <div class="card-meta">
+                        <span>👤 Michael Chen</span>
+                        <span>📅 Dec 5, 2025</span>
+                    </div>
+                   <button id="readMoreBtn1"  class="read-more">Read More →</button>
+                </div>
+            </article>
+            
+            <div class="modal-overlay" id="modalOverlay1">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn1">&times;</span>
+    <div class="image-container">
+      <img src="../images/gallery9.jpg" alt="Community Kitchen">
+      <span class="badgeimpact1">Education</span>
+    </div>
+    <div class="card-content">
+      <h2>Understanding Food Insecurity in Our Communities</h2>
+        <div class="meta">
+        <span>👤 Michael Chen</span>
+        <span>📅 Dec 5, 2025</span>
+      </div>
+     <b> <p>A deep dive into the statistics and stories behind food insecurity, and what we can do to make a difference.</p></b>
+      <h4> Food insecurity affects millions of families, often in ways that are invisible to those around them. It is not just about hunger—it is about the stress, health impacts, and difficult choices families face every day. Through our research and community outreach, we have learned that sustainable solutions require addressing root causes while providing immediate relief.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+            <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/blog3.jpeg" alt="Volunteer Spotlight">
+                    <span class="badge2">Volunteer Services</span>
+                </div>
+                <div class="card-body">
+                    <h3>Volunteer Spotlight: Meet Emma Thompson</h3>
+                    <p>Emma has been volunteering with MealRipple for three years. Here is her inspiring journey and why she continues...</p>
+                    <div class="card-meta">
+                        <span>👤 Lisa Martinez</span>
+                        <span>📅 Dec 1, 2025</span>
+                    </div>
+                    <button id="readMoreBtn2"  class="read-more">Read More →</button>
+                </div>
+            </article>
+            
+             <div class="modal-overlay" id="modalOverlay2">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn2">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog3.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact2">Volunteer Services</span>
+    </div>
+    <div class="card-content">
+      <h2>Volunteer Spotlight: Meet Emma Thompson</h2>
+        <div class="meta">
+        <span>👤 Lisa Martinez</span>
+        <span>📅 Dec 1, 2025</span>
+      </div>
+     <b> <p>Emma has been volunteering with MealRipple for three years. Here is her inspiring journey and why she continues to give back.</p></b>
+      <h4>Emma Thompson started volunteering with MealRipple after experiencing food insecurity herself during college. Now a successful nutritionist, she dedicates 15 hours every week to helping others. Her story reminds us that everyone has something to offer, and sometimes those who have faced challenges are best equipped to help others overcome them.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+            
+            
+            <article class="blog-card">
+            <div class="card-image">
+                <img src="../images/blog4.jpeg" alt="Reducing Food Waste">
+                <span class="badge3">Sustainability</span>
+            </div>
+            <div class="card-body">
+                <h3>Reducing Food Waste: Tips for Households</h3>
+                <p>Simple, practical strategies that every household can implement to reduce food waste and save money.</p>
+                <div class="card-meta">
+                    <span>👤 David Park</span>
+                    <span>📅 Nov 28, 2025</span>
+                </div>
+               <button id="readMoreBtn3"  class="read-more">Read More →</button>
+            </div>
+        </article>
+            
+            
+ <div class="modal-overlay" id="modalOverlay3">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn3">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog4.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact3">Sustainability</span>
+    </div>
+    <div class="card-content">
+      <h2>Reducing Food Waste: Tips for Households</h2>
+        <div class="meta">
+        <span>👤 David Park</span>
+        <span>📅 Nov 28, 2025</span>
+      </div>
+     <b> <p>Simple, practical strategies that every household can implement to reduce food waste and save money.</p></b>
+      <h4>Did you know that the average household throws away nearly 30% of the food they purchase? By implementing simple strategies like meal planning, proper storage, and creative use of leftovers, families can significantly reduce waste while saving hundreds of dollars annually. We share proven techniques that make a real difference.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+        <article class="blog-card">
+            <div class="card-image">
+                <img src="../images/blog5.jpeg" alt="Local Farms Partnership">
+                <span class="badge4">Partnerships</span>
+            </div>
+            <div class="card-body">
+                <h3>Our Partnership with Local Farms</h3>
+                <p>How collaborating with local farms helps us provide fresh produce while supporting sustainable agriculture.</p>
+                <div class="card-meta">
+                    <span>👤 Jennifer Lee</span>
+                    <span>📅 Nov 25, 2025</span>
+                </div>
+                <button id="readMoreBtn4"  class="read-more">Read More →</button>
+            </div>
+        </article>
+            
+            
+             <div class="modal-overlay" id="modalOverlay4">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn4">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog5.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact4">Partnerships</span>
+    </div>
+    <div class="card-content">
+      <h2>Our Partnership with Local Farms</h2>
+        <div class="meta">
+        <span>👤 Jennifer Lee</span>
+        <span>📅 Nov 25, 2025</span>
+      </div>
+     <b> <p>How collaborating with local farms helps us provide fresh produce while supporting sustainable agriculture.</p></b>
+      <h4>Our farm partnership program connects surplus produce directly from local farms to families in need. This not only reduces agricultural waste but also supports small farmers and ensures our community members receive fresh, nutritious fruits and vegetables. It is a win-win-win for everyone involved.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+            
+
+        <article class="blog-card">
+            <div class="card-image">
+                <img src="../images/blog6.jpeg" alt="Thanksgiving Event">
+                <span class="badge5">Events</span>
+            </div>
+            <div class="card-body">
+                <h3>Thanksgiving 2025: Serving 10,000 Meals</h3>
+                <p>A look back at our largest Thanksgiving event yet, where volunteers and donors came together to serve the community.</p>
+                <div class="card-meta">
+                    <span>👤 Robert Garcia</span>
+                    <span>📅 Nov 22, 2025</span>
+                </div>
+                <button id="readMoreBtn5"  class="read-more">Read More →</button>
+            </div>
+        </article>
+            
+            
+             <div class="modal-overlay" id="modalOverlay5">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn5">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog6.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact5">Events</span>
+    </div>
+    <div class="card-content">
+      <h2>Thanksgiving 2025: Serving 10,000 Meals</h2>
+        <div class="meta">
+        <span>👤 Robert Garcia</span>
+        <span>📅 Nov 22, 2025</span>
+      </div>
+     <b> <p>A look back at our largest Thanksgiving event yet, where volunteers and donors came together to serve the community.</p></b>
+      <h4>This Thanksgiving, MealRipple achieved a historic milestone by serving over 10,000 hot meals to families across the city. With the help of 500+ volunteers, 30 corporate sponsors, and countless individual donors, we created a day of warmth, connection, and gratitude. Every meal served represents a community coming together in love and support.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+            
+        <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/blog7.jpeg" alt="Nutrition Education">
+                    <span class="badge6">Education</span>
+                </div>
+                <div class="card-body">
+                    <h3>Nutrition Education for Children</h3>
+                    <p>Our new program teaches kids about healthy eating, cooking skills, and the importance of reducing food waste.</p>
+                    <div class="card-meta">
+                        <span>👤 Amanda White</span>
+                        <span>📅 Nov 18, 2025</span>
+                    </div>
+                    <button id="readMoreBtn6"  class="read-more">Read More →</button>
+                </div>
+            </article>
+            
+                         <div class="modal-overlay" id="modalOverlay6">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn6">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog7.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact6">Education</span>
+    </div>
+    <div class="card-content">
+      <h2>Nutrition Education for Children</h2>
+        <div class="meta">
+        <span>👤 Amanda White</span>
+        <span>📅 Nov 18, 2025</span>
+      </div>
+     <b> <p>Our new program teaches kids about healthy eating, cooking skills, and the importance of reducing food waste.</p></b>
+      <h4>Children are the future stewards of our planet. Our nutrition education program visits schools and community centers to teach kids about healthy eating habits, basic cooking skills, and why reducing food waste matters. Through hands-on activities and fun lessons, we are empowering the next generation to make informed food choices.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+
+            <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/blog8.jpeg" alt="Corporate Giving">
+                    <span class="badge7">Partnerships</span>
+                </div>
+                <div class="card-body">
+                    <h3>Corporate Giving: Making an Impact</h3>
+                    <p>How businesses can partner with MealRipple to create meaningful change in the fight against hunger.</p>
+                    <div class="card-meta">
+                       <span>👤 Thomas Anderson</span>
+                        <span>📅 Nov 15, 2025</span>
+                    </div>
+                    <button id="readMoreBtn7"  class="read-more">Read More →</button>
+                </div>
+            </article>
+            
+                         <div class="modal-overlay" id="modalOverlay7">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn7">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog8.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact7">Partnerships</span>
+    </div>
+    <div class="card-content">
+      <h2>Corporate Giving: Making an Impact</h2>
+        <div class="meta">
+        <span>👤 Thomas Anderson</span>
+        <span>📅 Nov 15, 2025</span>
+      </div>
+     <b> <p>How businesses can partner with MealRipple to create meaningful change in the fight against hunger.</p></b>
+      <h4>Corporate partnerships are essential to scaling our impact. From food donations and financial support to employee volunteer programs and cause marketing campaigns, there are numerous ways businesses can get involved. We work with each partner to create customized programs that align with their values and maximize community impact.</h4>
+    <h4>
+Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+
+            <article class="blog-card">
+                <div class="card-image">
+                    <img src="../images/blog9.jpeg" alt="Food Preservation">
+                    <span class="badge8">Sustainability</span>
+                </div>
+                <div class="card-body">
+                    <h3>The Science of Food Preservation</h3>
+                    <p>Learn about the methods we use to safely extend the life of rescued food and maximize our impact.</p>
+                    <div class="card-meta">
+                        <span>👤 Dr. Rachel Kim</span>
+                        <span>📅 Nov 10, 2025</span>
+                    </div>
+                    <button id="readMoreBtn8"  class="read-more">Read More →</button>
+                </div>
+            </article>
+
+            </div>
+    </main>
+                 <div class="modal-overlay" id="modalOverlay8">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn8">&times;</span>
+    <div class="image-container">
+      <img src="../images/blog9.jpeg" alt="Community Kitchen">
+      <span class="badgeimpact8">Sustainability</span>
+    </div>
+    <div class="card-content">
+      <h2>The Science of Food Preservation</h2>
+        <div class="meta">
+        <span>👤 Dr. Rachel Kim</span>
+        <span>📅 Nov 10, 2025</span>
+      </div>
+     <b> <p>Learn about the methods we use to safely extend the life of rescued food and maximize our impact.</p></b>
+      <h4>Food preservation is both an art and a science. Our team uses evidence-based techniques including proper refrigeration, flash freezing, and safe reheating protocols to ensure every meal we serve is not only nutritious but also safe. We share the science behind our methods and how households can apply similar principles at home.</h4>
+    <h4>Our work continues to evolve as we learn from our community and adapt to their needs. Every story we share is a testament to the power of collective action and the belief that everyone deserves access to nutritious food.</h4>
+      </div>
+  </div>
+</div>
+
+    
+    
+    
+    
+    
+
+     <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+         <span id="goupicon">🢁</span>
+</button>
+
+  <script src="../js/main%20blog.js"></script>
+    
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+
+
+</body>
+</html>

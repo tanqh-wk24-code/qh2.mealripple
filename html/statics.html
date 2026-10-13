@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="../css/statics.css">
+   
+</head>
+    <body>
+   
+        <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="../html/fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../js/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+    </header>
+    
+    
+    
+
+    <section class="waste-hero">
+        <div class="container">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <h1>Food Wasted Today</h1>
+            <div class="main-stat">
+                <span class="counter" data-target="15.9" data-decimal="true">0</span>
+                <span class="unit">tons</span>
+            </div>
+            
+            <div class="secondary-stats">
+                <div class="stat-card">
+                    <h3 class="counter" data-target="126800">0</h3>
+                    <p>Meals Lost</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="5780">0</h3>
+                    <p>Families Impacted</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="47600" data-prefix="RM ">0</h3>
+                    <p>Value Wasted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transparency-section">
+        <div class="container">
+            <div class="icon-header">
+                <div class="dollar-circle">$</div>
+            </div>
+            <h2>How Your Donations Are Used</h2>
+            <p class="subtitle">We believe in complete financial transparency.</p>
+            <p >Here's exactly how we allocate every dollar you contribute.</p>
+
+            <div class="allocation-box">
+                <h3>Annual Budget Allocation (RM 500,000)</h3>
+                <p>Based on 2025 financial year</p>
+                
+                <div class="transparency-section">
+    <h3>Where Your Donation Goes</h3>
+    <div class="progress-container">
+        <div class="bar-segment program-services" style="flex: 85;">
+            <span class="percentage">85%</span>
+            <span class="label">Program Services</span>
+        </div>
+        <div class="bar-segment operations" style="flex: 10;">
+            <span class="percentage">10%</span>
+            <span class="label">Operations & Administration</span>
+        </div>
+        <div class="bar-segment fundraising" style="flex: 5;">
+            <span class="percentage">5%</span>
+            <span class="label">Fundraising & Awareness</span>
+        </div>
+    </div>
+</div>
+
+                
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fas fa-book-open"></i>
+                        <h4>Program Services <span class="highlight">85%</span></h4>
+                        <p>Direct meal preparation, food rescue, and distribution programs.</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-user"></i>
+                        <h4>Operations & Admin <span class="highlight">10%</span></h4>
+                        <p>Essential overhead to keep programs running efficiently.</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Fundraising <span class="highlight">5%</span></h4>
+                        <p>Growing our reach and securing sustainable funding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-grid">
+                <div class="trust-badge green">
+                    <i class="fas fa-box"></i>
+                    <p><strong>RM 5 Meal Impact</strong>: Just RM 10 provides a complete, nutritious meal.</p>
+                </div>
+                <div class="trust-badge blue">
+                    <i class="fas fa-check-square"></i>
+                    <p><strong>Verified Financial Transparency</strong>: Charity Navigator 4-star rating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+        <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+            <span id="goupicon">🢁</span>
+</button>
+
+  <script src="../js/statics.js"></script>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+    
+</body>
+</html>

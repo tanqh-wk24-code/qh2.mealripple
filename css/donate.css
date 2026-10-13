@@ -1,0 +1,918 @@
+/* Navigation Bar Container */
+.navbar {
+    background-color: #a5bcc4; /* The specific blue-grey from your Education page */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a4a; /* Darker blue for contrast */
+}
+
+/* Menu Links Style */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #d37546; /* MealRipple brand orange */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  font-size: 10px;
+  /* INCREASED MARGIN: Space between the text and the arrow */
+  margin-left: 5px; 
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* Sits directly below the navbar */
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f8f9fa;
+  color: #ff6a00;
+  padding-left: 25px;
+}
+
+/* Highlighted Donate item */
+.donate-item {
+  
+  font-weight: 700 !important;
+}
+
+.donate-item:hover {
+  background: #fff5ee !important;
+}
+
+
+.music-control-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 117, 70, 0.8); /* 匹配你的品牌橙色 */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+
+#magic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 关键：允许点击下层的按钮 */
+    z-index: 9999;
+}
+
+.music-control-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.guide-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.guide-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* This class will be added by JS to hide the overlay */
+.hide-overlay {
+    opacity: 0!important;
+    visibility: hidden !important;
+}
+
+.click-icon { font-size: 3rem; margin-top: 20px; animation: bounce 2s infinite; }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+}
+
+
+:root {
+    --primary-orange: #d37546;
+    --beige-bg: #f3d9a2;
+    --beige: #f3e5ab;
+    --nav-bg: #a5bcc4;
+    --border-gold: #d4c4a8;
+    --text-main: #333;
+    --impact-bg: #f5d6c6;
+    --secure-bg: #e8f9e9;
+    --bg-light: #fdfcfb;
+    --text-dark: #333;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+
+
+/* Navigation */
+.navbar { background-color: var(--nav-bg); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; color: #1a3a4a; font-weight: bold; gap: 10px; }
+.logo img { height: 45px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+.nav-links a.active { border-bottom: 2px solid var(--primary-orange); }
+
+/* Hero Section */
+.hero {
+    height: 450px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../IMAGES/donate.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 { font-size: 1.6rem; margin-bottom: 10px; }
+
+/* Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+/* Main Donation Card */
+.donation-card {
+    border: 1px solid var(--border-gold);
+    border-radius: 24px;
+    padding: 40px;
+    background: white;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Amount Selector */
+.amount-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.amount-btn {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.amount-btn strong { font-size: 1.1rem; }
+.amount-btn span { font-size: 0.9rem; color: #666; }
+
+.amount-btn.active {
+    border-color: #4a7c59;
+    background-color: #f0f7f2;
+}
+
+/* Payment Method Selectors */
+.payment-methods {
+    margin-top: 20px;
+}
+
+/* Base Button Style */
+.method-btn {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc; /* Default grey border */
+    background: white;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* Hover Effect */
+.method-btn:hover {
+    background-color: #f9f9f9;
+}
+
+/* Active / Selected Style */
+.method-btn.active {
+    border-color: #333; /* Darker border to match original design */
+    border-width: 1.5px;
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Green Security Box */
+.secure-info {
+    background-color: var(--secure-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid #c2eec4;
+}
+
+.secure-info p { font-size: 0.85rem; margin-top: 5px; }
+
+/* Base Donate Button Style */
+.donate-now-btn {
+    width: 100%;
+    padding: 18px;
+   background-color: #d37546;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    /* Smooth transition for the color change */
+    transition: background-color 0.2s ease, transform 0.1s ease; 
+}
+
+/* Hover State: Darkens when touched/hovered */
+.donate-now-btn:hover {
+    background-color: #bb421a; /* A darker shade of orange */
+}
+
+/* Active State: Darkens further when clicked */
+.donate-now-btn:active {
+    background-color: #b5623a; /* Even darker orange */
+    transform: scale(0.98);    /* Slight "press down" effect */
+}
+
+/* Sidebar Styling */
+.info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.impact-card {
+    background-color: var(--impact-bg);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.why-card {
+    border: 1px solid #ccc;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.why-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-card li { margin-bottom: 10px; display: flex; align-items: flex-start; }
+.why-card li::before {
+    content: "✔️";
+    margin-right: 12px;
+    background: #000;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.tax-card {
+    background-color: var(--secure-bg);
+    border: 1px solid #c2eec4;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .container { padding: 10px; }
+}
+
+/* Modal Overlay */
+.modal {
+    display: none; /* Keep hidden initially */
+    position: fixed;
+    z-index: 9999; /* Make sure it is on the very top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dim the background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Success Checkmark Icon */
+.icon-success {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Close Button Style */
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Close Button Hover State */
+.close-btn:hover {
+    background-color: #555;
+}
+
+/* Simple Fade-In and Slide-Down Animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* 1. Grid Layout: Smaller tiles, more items per row */
+.thank-you-grid {
+    display: grid;
+    /* Reduced min width from 400px to 280px to fit more cards per row */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; /* Reduced spacing between cards */
+}
+
+/* 2. Compact Card Styling */
+.card {
+    border-radius: 15px; /* Slightly tighter corners */
+    padding: 20px;       /* Reduced internal padding for a compact look */
+    min-height: 160px;   /* Lowered minimum height */
+    
+    /* Smooth hover transition */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fff; /* Default background */
+}
+
+/* 3. Floating Hover Effect */
+.card:hover {
+    /* Subtle lift and scale for smaller cards */
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1); 
+}
+
+/* 4. Downsized Content Typography */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.avatar {
+    width: 40px;         /* Smaller profile icon */
+    height: 40px;
+    font-size: 1.2rem;
+    margin-right: 12px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;   /* Smaller name font size */
+    font-weight: 600;
+}
+
+.quote {
+    font-size: 0.95rem;  /* Smaller message text */
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #444;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;  /* Smaller amount and date text */
+    font-weight: 600;
+    color: #666;
+}
+
+/* Color Schemes (From your image) */
+.bg-yellow { background-color: #f7edcf; }
+.bg-orange { background-color: #f1c9b3; }
+.bg-grey   { background-color: #dee4e7; }
+
+/* Banner Section Styles */
+.banner-section {
+    background-color: #455a64; /* Dark blue-grey background */
+    color: white;
+    padding: 40px 20px;
+    border-radius: 30px; /* Large rounded corners as seen in the image */
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    /* Smooth entrance animation if needed */
+    transition: all 0.3s ease;
+}
+
+/* Heart Icon at the top */
+.heart-icon { 
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+    display: block;
+}
+
+/* Gold "Donate Now" Button */
+.donate-btn-gold {
+    background-color: #f3d082;  /* Muted gold/tan color */
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Button Hover State */
+.donate-btn-gold:hover {
+     background-color: #e6c26f;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* --- 2. Orange Action Buttons (Donate Now / Become a Partner) --- */
+.action-btn-orange {
+    background-color: #d37546; /* Original deep orange */
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect: Uses brightness filter to darken automatically */
+.action-btn-orange:hover {
+    background-color: #b5623a;
+    /* Alternative: filter: brightness(85%); */
+}
+
+/* --- Active State (When actually clicked) --- */
+.donate-btn-gold:active, 
+.action-btn-orange:active {
+    transform: scale(0.98); /* Slight shrink effect when pressed */
+}
+
+/* Heading and Paragraph Styling */
+.banner-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.banner-section p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+
+.options-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    padding: 30px;
+    width: 400px;
+    text-align: left;
+}
+
+.option-card ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 20px 0;
+    color: #444;
+}
+
+.action-btn-orange {
+     background-color: #d37546; /* 橙红色 */
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Layout & Typography */
+.content-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.impact-section {
+  text-align: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #ffffff;
+}
+
+/* 1. Quote Section: Soft Background & Tight Typography */
+.quote-background {
+  background-color: #dcedfe; /* Very subtle cool gray */
+  padding: 90px 0;
+  margin-bottom: 60px;
+    margin-top: 40px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.display-quote {
+  font-size: 1.50rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #111827; /* Charcoal */
+  letter-spacing: -0.025em; /* Tighter letter spacing for a premium feel */
+}
+
+.display-quote .sub-text {
+  display: block;
+  margin-top: 12px;
+  color: #374151; /* Slightly lighter gray */
+}
+
+/* 2. Trust Badges: Compact & Elegant */
+.badge-grid {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.trust-badge {
+  background: #f4e4b5; /* Warm refined gold */
+  padding: 24px 20px;
+  border-radius: 16px;
+  flex: 0 1 260px; /* Constrains the width to make them smaller */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.trust-badge:hover {
+  transform: translateY(-4px);
+  background: #f7ebc3;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.trust-badge h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.trust-badge p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #292a2d; /* Muted slate gray */
+  margin: 0;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .quote-background { padding: 60px 0; }
+  .display-quote { font-size: 1.6rem; }
+  .badge-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .trust-badge { width: 100%; max-width: 300px; }
+}
+
+
+
+
+
+
+
+
+#backToTop {
+    display: none;             /* Hidden by default */
+    position: fixed;
+    bottom: 100px;             /* Increased to sit ABOVE the music icon */
+    right: 19px;               /* Aligned with the side */
+    z-index: 999;              /* High z-index to stay on top of other elements */
+    
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Matching your brand orange */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px); /* Subtle float effect on hover */
+}
+
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #a5bcc4; /* Your brand's signature blue-grey */
+    color: #1a3a4a;
+    padding: 60px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Column Formatting */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1a3a4a;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1a3a4a;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #d37546; /* Brand orange hover effect */
+}
+
+/* Logo and Slogan Styling */
+.brand-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.brand-info img {
+    height: 48px;
+}
+
+.brand-info p {
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.contact-icon {
+    width: 20px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 25px 5% 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Social Media Links */
+/* Container: Pushes text to the left and icons to the right */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Wrapper */
+/* Ensures the parent container aligns items horizontally */
+.social-media-footer {
+    display: flex;            /* Enables Flexbox layout */
+    flex-direction: row;      /* Arranges items in a horizontal row (default) */
+    gap: 15px;                /* Sets the spacing between each icon circle */
+    align-items: center;      /* Vertically centers icons within the footer bar */
+}
+
+/* Styling for the circular icon background */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50%;       /* Creates the perfect circle shape */
+    display: flex;            /* Centers the icon/image inside the circle */
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    text-decoration: none;    /* Removes underlines from the link */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Scaling and fitting for image-based logos */
+.social-icon img {
+    width: 60%;               /* Logo takes up 60% of the circle width */
+    height: auto;             /* Maintains aspect ratio */
+    object-fit: contain;      /* Ensures the logo fits entirely without cropping */
+    display: block;
+}
+
+/* Floating Hover Animation */
+.social-icon:hover {
+    transform: translateY(-5px); /* Lifts the icon up by 5 pixels */
+    background-color: #f8f9fa;   /* Changes background to a very light grey */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Deepens the shadow while floating */
+}

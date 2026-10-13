@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="../css/education.css">
+    
+</head>
+<body>
+
+ <header>
+        
+       <nav class="navbar">
+            <div class="nav-container">
+            <a href="../html/index.html" class="logo">
+            <img src="../images/logo.png" alt="MealRipple">
+            <span class="brand-name">MealRipple</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li class="dropdown">
+                <li class="dropdown">
+                        <a href="../html/education.html" class="dropbtn">Education <span class="arrow">▼</span></a>
+                <ul class="dropdown-menu">
+        <li><a href="../html/main%20blog.html" class="donate-item">Blog</a></li>
+      </ul>
+    </li>
+            <li class="dropdown">
+                    <a href="fund%20and%20campaign.html" class="dropbtn">Fund and Campaign <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../html/donate.html" class="donate-item">Donate</a></li>
+      </ul>
+    </li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </div>
+           
+           
+        
+    <div class="guide-content">
+               </div>
+       
+
+           
+<audio id="bgMusic" loop>
+    <source src="../music/music.mp3" type="audio/mpeg">
+    
+</audio>
+
+           <button id="music-toggle" class="music-control-btn">
+    <span id="music-icon">🔊</span>
+    
+</button>
+           
+        
+
+   <canvas id="magic-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
+
+           
+</nav>
+ </header>
+    
+    <header class="edu-hero">
+        <div class="hero-overlay">
+            <h1>Education for a <br>Hunger-Free World</h1>
+            <p>Learn, Act, and Make a Difference</p>
+            <div class="hero-btns">
+                <a href="../html/education.html" class="btn btn-primary">Explore Resources</a>
+                <a href="../html/donate.html" class="btn btn-outline">Join Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="edu-section stats-section">
+        <h2 class="section-title">Why Hunger Matters</h2>
+        <p class="section-subtitle">Understanding the scale of global hunger and food waste is the first step toward creating meaningful change. Together, we can work towards UN Sustainable Development Goal 2: Zero Hunger.</p>
+        
+        <div class="stats-grid">
+        <div class="stat-card dark-gray">
+            <i class="fas fa-globe"></i>
+            <h3><span class="count" data-target="828">0</span> M</h3>
+            <p>People Face Hunger Globally</p>
+        </div>
+
+        <div class="stat-card dark-blue">
+            <i class="fas fa-user"></i>
+            <h3><span class="count" data-target="1300">0</span> M</h3>
+            <p>Tons of Food Wasted Annually</p>
+        </div>
+
+        <div class="stat-card light-orange">
+            <i class="fas fa-chart-line"></i>
+            <h3><span class="count" data-target="33">0</span> %</h3>
+            <p>Of Food Produced is Wasted</p>
+        </div>
+
+        <div class="stat-card dark-orange">
+            <i class="fas fa-heart"></i>
+            <h3><span class="count" data-target="2">0</span></h3>
+            <p>UN SDG Goal: Zero Hunger</p>
+        </div>
+    
+        </div>
+    </section>
+
+    <section class="edu-section challenges-section">
+        <div class="challenge-container">
+            <div class="challenge-box">
+                <h3 class="pill-title">Global Challenge</h3>
+                <p>Hunger affects one in every ten people worldwide. While enough food is produced globally to feed everyone, issues of distribution, waste, and inequality persist.</p>
+                <p>Climate change, conflict, and economic instability continue to jeopardize food security, making education and action more critical than ever.</p>
+            </div>
+            <div class="challenge-box">
+                <h3 class="pill-title">Local Impact</h3>
+                <p>In our communities, thousands of families struggle with food insecurity daily. Many children go to school hungry, affecting their ability to learn and thrive.</p>
+                <p>Through education and community action, we can reduce hunger locally and create a more equitable food system for all.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="edu-section resources-section">
+        <h2 class="section-title">Educational Resources</h2>
+        <p class="section-subtitle">Explore our curated collection of articles, tips, and practical guides to deepen your understanding and take action.</p>
+        
+    
+    <div class="resource-grid">
+        <div class="resource-card">
+            <div class="card-header">
+                <span class="category-label">Hunger Facts</span>
+                <h3>Understanding Global Hunger</h3>
+                <p class="summary">Learn about the root causes of hunger and its impact on communities worldwide.</p>
+            </div>
+            <div class="card-body">
+                <div class="extra-content" id="res1">
+                    <p>Hunger is not just about lack of food—it's about poverty, inequality, and lack of access to resources. Over 828 million people face chronic hunger, with the majority living in developing countries.</p>
+                    <p>Key factors contributing to hunger include climate change, conflict, economic instability, and inadequate infrastructure. Understanding these interconnected issues is crucial for developing effective solutions.</p>
+                    <p>Children are particularly vulnerable, with malnutrition affecting their physical and cognitive development. Education and community support are essential tools in breaking the cycle of poverty and hunger.</p>
+                </div>
+                <button class="toggle-btn" onclick="toggleResource('res1', this)">
+                    <span class="icon">∨</span> Show More
+                </button>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="card-header">
+                <span class="category-label">Food Waste Tips</span>
+                <h3>Reduce Food Waste at Home</h3>
+                <p class="summary">Simple strategies to minimize food waste in your daily life and save money.</p>
+            </div>
+            <div class="card-body">
+                <div class="extra-content" id="res2">
+                    <p>Plan your meals ahead of time and create a shopping list to avoid overbuying. Store food properly to extend its freshness—learn which items belong in the fridge, freezer, or pantry.</p>
+                    <p>Use the "first in, first out" method: place newer items behind older ones to ensure nothing gets forgotten. Get creative with leftovers by transforming them into new meals.</p>
+                    <p>Understand expiration dates: "best by" doesn't mean unsafe, just peak quality. Compost food scraps that can't be eaten to reduce landfill waste and create nutrient-rich soil.</p>
+                </div>
+                <button class="toggle-btn" onclick="toggleResource('res2', this)">
+                    <span class="icon">∨</span> Show More
+                </button>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="card-header">
+                <span class="category-label">Community Action</span>
+                <h3>How You Can Help Your Community</h3>
+                <p class="summary">Discover meaningful ways to contribute to fighting hunger in your local area.</p>
+            </div>
+            <div class="card-body">
+                <div class="extra-content" id="res3">
+                    <p>Volunteer at local food banks, soup kitchens, or community gardens. Your time and skills can make a real difference in supporting those experiencing food insecurity.</p>
+                    <p>Organize food drives at your workplace, school, or place of worship. Collect non-perishable items and fresh produce to donate to local organizations serving those in need.</p>
+                    <p>Advocate for policy changes that address the root causes of hunger. Contact your elected representatives about supporting food assistance programs, affordable housing, and living wages.</p>
+                    <p>Share your knowledge with others. Host educational events, share resources on social media, and encourage conversations about hunger and food waste in your community.</p>
+                </div>
+                <button class="toggle-btn" onclick="toggleResource('res3', this)">
+                    <span class="icon">∨</span> Show More
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+        
+    <section class="edu-section events-section">
+        <h2 class="section-title">Workshops & Events</h2>
+        <p class="section-subtitle">Join our interactive workshops and educational events to learn, connect, and take action in your community.</p>
+        <div class="events-grid">
+        <div class="event-card">
+            <div class="img-container">
+                <img src="../images/workshop1.jpg" alt="Sustainability Workshop">
+                <span class="status-tag online">Online</span>
+            </div>
+            <div class="event-info">
+                <h4>Food Sustainability 101: Building a Better Food System</h4>
+                <p class="meta"><i class="far fa-calendar"></i> Dec 15, 2024 at 2:00 PM - 4:00 PM</p>
+                <p class="meta"><i class="fas fa-video"></i> Zoom Virtual Event</p>
+                <p class="meta"><i class="fas fa-users"></i> 50 spots available</p>
+                <div class="tag-list">
+                    <span>Sustainability</span> <span>Food Waste</span> <span>Awareness</span>
+                </div>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="img-container">
+                <img src="../images/workshop2.jpg" alt="Community Garden">
+                <span class="status-tag in-person">In-person</span>
+            </div>
+            <div class="event-info">
+                <h4>Community Garden Workshop: Growing Hope Together</h4>
+                <p class="meta"><i class="far fa-calendar"></i> Dec 20, 2024 at 10:00 AM - 1:00 PM</p>
+                <p class="meta"><i class="fas fa-map-marker-alt"></i> District Main Street</p>
+                <p class="meta"><i class="fas fa-users"></i> 20 spots available</p>
+                <div class="tag-list">
+                    <span>Gardening</span> <span>Skill Share</span> <span>Community</span>
+                </div>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="img-container">
+                <img src="../images/workshop3.jpg" alt="Youth Leadership">
+                <span class="status-tag online">Online</span>
+            </div>
+            <div class="event-info">
+                <h4>Youth Leadership:     
+                    Students Against Hunger</h4>
+                
+                <p class="meta"><i class="far fa-calendar"></i> Jan 5, 2025 at 3:00 PM - 5:30 PM</p>
+                <p class="meta"><i class="fas fa-school"></i> Lincoln High School Auditorium</p>
+                <p class="meta"><i class="fas fa-users"></i> 100 students</p>
+                <div class="tag-list">
+                    <span>Leadership</span> <span>Youth</span> <span>Advocacy</span>
+                </div>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+  <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+      <span id="goupicon">🢁</span>
+</button>
+    
+            <script src="../js/education.js"></script>
+    
+  <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="MealRipple">
+                <h2>MealRipple</h2>
+            </div>
+            <p>"Every meal creates a ripple of hope."</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/aboutus.html">About us</a></li>
+                <li><a href="../html/education.html">Education</a></li>
+                <li><a href="../html/fund%20and%20campaign.html">Fund & Campaign</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Link</h3>
+            <ul>
+                <li><a href="../html/donate.html">Donate</a></li>
+                <li><a href="../html/gallery.html">Gallery</a></li>
+                <li><a href="../html/main%20blog.html">Blog</a></li>
+                <li><a href="../html/statics.html">Statics</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-info">
+            <h3>Contact</h3>
+            <ul>
+        <li>
+            <img src="../images/email%20(1).png" alt="Email" class="contact-icon">
+            <span>mealripple@gmail.com</span>
+        </li>
+        <li>
+            <img src="../images/phone.png" alt="Phone" class="contact-icon">
+            <span>012-3456789</span>
+        </li>
+                <li>
+            <img src="../images/location.png" alt="Location" class="contact-icon">
+            <span>123 Hope Street, Community District</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+
+   <div class="footer-bottom">
+    <p>@2025 MealRipple. All rights reserved.</p>
+    
+    <div class="social-media-footer">
+    <a href="#" class="social-icon">
+        
+        <img src="../images/rednote.png" alt="Rednote">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/facebook.png" alt="Facebook">
+    </a>
+    
+    <a href="#" class="social-icon">
+        <img src="../images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</div>
+        
+        
+    
+</footer>
+    
+    
+    
+</body>
+</html>

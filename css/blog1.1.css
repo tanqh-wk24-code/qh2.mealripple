@@ -1,0 +1,67 @@
+/* 基础设置 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+
+/* 导航栏 */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: #fff; border-bottom: 1px solid #eee; }
+.logo { font-weight: bold; font-size: 24px; color: #ff6b35; }
+nav a { text-decoration: none; color: #555; margin-left: 25px; font-size: 14px; }
+
+/* 容器 */
+.container { width: 80%; max-width: 1000px; margin: 40px auto; }
+.hero-section { text-align: center; margin-bottom: 40px; }
+
+/* 主文章卡片样式 (图1) */
+.main-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+.img-box { position: relative; width: 100%; }
+.img-box img { width: 100%; height: auto; display: block; }
+.content { padding: 30px; }
+.content h2 { font-size: 28px; margin-bottom: 15px; }
+
+/* 标签样式 */
+.badge { position: absolute; top: 20px; left: 20px; padding: 6px 16px; border-radius: 25px; color: white; font-size: 12px; font-weight: bold; }
+.education { background: #4ade80; }
+.impact { background: #4ade80; display: flex; align-items: center; gap: 10px; }
+
+/* 弹窗样式 (重点：格子大一点) */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 背景调深一点突出弹窗 */
+    display: none; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+
+.modal-card {
+    background: #fff;
+    width: 90%;
+    max-width: 750px; /* 加大宽度 */
+    border-radius: 25px; /* 更圆润 */
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease-out;
+}
+
+.modal-card .img-box img { height: 400px; object-fit: cover; } /* 增加图片高度 */
+
+.modal-card .content { padding: 40px; } /* 增加内边距，呼吸感 */
+.modal-card h2 { font-size: 32px; margin-bottom: 20px; }
+
+/* 关闭按钮在标签内 */
+.close-x {
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding-left: 8px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+.meta { font-size: 14px; color: #888; margin-top: 15px; }
+
+/* 按钮样式 */
+.read-more-trigger { background: none; border: none; font-weight: bold; cursor: pointer; color: #333; margin-top: 20px; }
+
+/* 简单动画 */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

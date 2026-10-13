@@ -1,0 +1,720 @@
+/* Navigation Bar Container */
+.navbar {
+    background-color: #a5bcc4; /* The specific blue-grey from your Education page */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Style */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a4a; /* Darker blue for contrast */
+}
+
+/* Menu Links Style */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #d37546; /* MealRipple brand orange */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.arrow {
+  font-size: 10px;
+  /* INCREASED MARGIN: Space between the text and the arrow */
+  margin-left: 5px; 
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* Sits directly below the navbar */
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f8f9fa;
+  color: #ff6a00;
+  padding-left: 25px;
+}
+
+/* Highlighted Donate item */
+.donate-item {
+  
+  font-weight: 700 !important;
+}
+
+.donate-item:hover {
+  background: #fff5ee !important;
+}
+
+
+.music-control-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 117, 70, 0.8); /* 匹配你的品牌橙色 */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+
+#magic-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 关键：允许点击下层的按钮 */
+    z-index: 9999;
+}
+
+.music-control-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.guide-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.guide-content p { font-size: 1.2rem; opacity: 0.9; }
+
+/* This class will be added by JS to hide the overlay */
+.hide-overlay {
+    opacity: 0!important;
+    visibility: hidden !important;
+}
+
+.click-icon { font-size: 3rem; margin-top: 20px; animation: bounce 2s infinite; }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+}
+
+
+:root {
+    --primary-orange: #d37546;
+    --beige-bg: #f3d9a2;
+    --beige: #f3e5ab;
+    --nav-bg: #a5bcc4;
+    --text-dark: #333;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+
+
+/* Navigation */
+.navbar { background-color: var(--nav-bg); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; color: #1a3a4a; font-weight: bold; gap: 10px; }
+.logo img { height: 45px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+.nav-links a.active { border-bottom: 2px solid var(--primary-orange); }
+
+
+
+/* 2. Hero Container */
+.hero {
+    /* Use 100vw to force the picture to touch the glass edges of the screen */
+    width: 100vw; 
+    height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('../images/aboutus.png') no-repeat center center;
+    background-size: 2000px;
+   
+    
+    
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Optional: Small dark tint ONLY if text is hard to read on the photo */
+    background: rgba(0, 0, 0, 0); 
+}
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 15px; 
+    font-weight: 800;
+}
+
+.hero p { 
+    font-size: 1.2rem;
+    max-width: 650px; 
+    margin: 0 auto; 
+    line-height: 1.6; 
+}
+
+/* Vision/Mission Badges */
+/* Section Container */
+.vision-mission-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Flexbox Layout for the two columns */
+.vm-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; /* Distributes items evenly */
+    gap: 60px; /* Space between the two blocks */
+}
+
+/* Individual Column Styling */
+.vm-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures the button and text are centered vertically */
+    text-align: center;
+}
+
+/* Orange Pill Button Styling */
+.pill-button {
+    background-color: #d37546; /* Brand orange color */
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 12px 100px; /* Wide padding creates the pill shape */
+    border-radius: 50px; /* Perfectly round edges */
+    margin-bottom: 40px; /* Space between the button and text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle elevation shadow */
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle Hover Effect (Optional) */
+.pill-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Body Text Styling */
+.vm-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    max-width: 420px; /* Prevents lines from becoming too long and messy */
+    margin: 0 auto;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .vm-container {
+        flex-direction: column; /* Stack columns on top of each other */
+        gap: 50px;
+    }
+    
+    .pill-button {
+        padding: 12px 60px; /* Shrink button width on small screens */
+        font-size: 20px;
+    }
+}
+
+/* SDG Banner */
+.sdg-banner {
+    background: var(--beige);
+    margin: 40px 10%;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Core Values Grid */
+.values-section { 
+    text-align: center; 
+    padding: 60px 10%; 
+    
+}
+
+.values-section h2{ 
+    text-align: center; 
+
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;/* Clean, modern sans-serif font */
+    
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+/* Base styling for the cards */
+.value-card {
+    background-color: #a3b8be; /* Blue-grey from your image */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    
+    /* 1. Transition makes the animation smooth */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* 2. Hover state: The "Float" effect */
+.value-card:hover {
+    /* Moves the card up by 15px */
+    transform: translateY(-15px); 
+    
+    /* Adds a soft shadow to look like it's lifting off the page */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Optional: Brighten the color slightly */
+    background-color: #b1c5cb;
+}
+.value-card h4 { margin-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
+
+/* 标题部分 */
+.team-section {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.team-section h2 {
+    font-family: 'Poppins', sans-serif;/* Clean, modern sans-serif font */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.team-section .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* 网格布局 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 核心：三列等分 */
+    gap: 30px; /* 卡片之间的间距 */
+}
+
+/* 卡片容器 */
+.team-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px; /* 外层大圆角 */
+    overflow: hidden; /* 裁剪内部图片以适应圆角 */
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时的微动效果 */
+}
+
+/* 图片样式 */
+.image-container img {
+    width: 100%;
+    height: 412px; /* 固定高度确保整齐 */
+    object-fit: cover; /* 裁剪图片中心，不变形 */
+    display: block;
+}
+
+/* 文本信息部分 */
+.member-info {
+    padding: 20px;
+    text-align: left; /* 对应稿件中的左对齐 */
+}
+
+.member-info h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: uppercase; /* 名字大写 */
+}
+
+.member-info .designation {
+    font-size: 14px;
+    color: #d37546; /* 使用品牌橙色 */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.member-info .description {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* 响应式：在手机端显示为一列 */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Section Container */
+.partners-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden; /* Essential to hide logos outside the viewport */
+}
+
+/* Typography & Alignment */
+.partners-section h2 {
+    font-family: 'Poppins', sans-serif;/* Clean, modern sans-serif font */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Slider Viewport */
+/* Container to hide the overflow */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    padding: 40px 0;
+}
+
+/* The conveyor belt track */
+.logo-track {
+    display: flex;
+    /* Speed: 30s, Timing: linear (constant speed), Loop: infinite */
+    animation: scroll-infinite 30s linear infinite;
+    width: fit-content;
+}
+
+.logo-item {
+    width: 280px; /* Fixed width for every item */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    padding: 0 30px;
+}
+
+/* LINE 1: The Logo Photo Line (Bottom Aligned) */
+.image-box {
+    height: 100px; /* Uniform height for the logo area */
+    display: flex;
+    align-items: flex-end; /* ALIGNMENT FIX: Keeps logos on one line */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-box img {
+    max-height: 80px; /* Limits logo height so they don't look messy */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* LINE 2: The Text Line (Top Aligned) */
+.logo-label {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    display: block;
+    line-height: 1.2;
+}
+
+/* THE INFINITE LOOP ANIMATION */
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move left by the EXACT width of the first set (3 logos * 280px) */
+        transform: translateX(calc(-280px * 3)); 
+    }
+}
+
+/* Pause when the user wants to read a specific partner name */
+.logo-track:hover {
+    animation-play-state: paused;
+}
+
+.slider-container::before,
+.slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+}
+.slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+.slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.logo-track:hover {
+    animation-play-state: paused;
+}
+
+#backToTop {
+    display: none;             /* Hidden by default */
+    position: fixed;
+    bottom: 100px;             /* Increased to sit ABOVE the music icon */
+    right: 19px;               /* Aligned with the side */
+    z-index: 999;              /* High z-index to stay on top of other elements */
+    
+    border: none;
+    outline: none;
+    background-color: #d35400; /* Matching your brand orange */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px); /* Subtle float effect on hover */
+}
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #a5bcc4; /* Your brand's signature blue-grey */
+    color: #1a3a4a;
+    padding: 60px 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Column Formatting */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1a3a4a;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #1a3a4a;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #d37546; /* Brand orange hover effect */
+}
+
+/* Logo and Slogan Styling */
+.brand-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.brand-info img {
+    height: 48px;
+}
+
+.brand-info p {
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.contact-icon {
+    width: 20px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Bottom Bar Styling */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 25px 5% 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Social Media Links */
+/* Container: Pushes text to the left and icons to the right */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icon Wrapper */
+/* Ensures the parent container aligns items horizontally */
+.social-media-footer {
+    display: flex;            /* Enables Flexbox layout */
+    flex-direction: row;      /* Arranges items in a horizontal row (default) */
+    gap: 15px;                /* Sets the spacing between each icon circle */
+    align-items: center;      /* Vertically centers icons within the footer bar */
+}
+
+/* Styling for the circular icon background */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50%;       /* Creates the perfect circle shape */
+    display: flex;            /* Centers the icon/image inside the circle */
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    text-decoration: none;    /* Removes underlines from the link */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Scaling and fitting for image-based logos */
+.social-icon img {
+    width: 60%;               /* Logo takes up 60% of the circle width */
+    height: auto;             /* Maintains aspect ratio */
+    object-fit: contain;      /* Ensures the logo fits entirely without cropping */
+    display: block;
+}
+
+/* Floating Hover Animation */
+.social-icon:hover {
+    transform: translateY(-5px); /* Lifts the icon up by 5 pixels */
+    background-color: #f8f9fa;   /* Changes background to a very light grey */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Deepens the shadow while floating */
+}
