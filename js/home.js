@@ -1,257 +1,247 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const guide = document.getElementById('audio-guide');
-    const audio = document.getElementById('bgMusic');
+document.addEventListener("DOMContentLoaded", () => {
+    // =========================
+    // 1. Welcome overlay + music
+    // =========================
+    const guide = document.getElementById("audio-guide");
+    const audio = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("music-toggle");
+    const musicIcon = document.getElementById("music-icon");
 
-    if (guide && audio) {
-        guide.addEventListener('click', () => {
-            // 1. Force the overlay to disappear NO MATTER WHAT
-            guide.classList.add('hide-overlay');
+    if (guide) {
+        guide.addEventListener("click", () => {
+            // Hide the welcome overlay when clicked.
+            guide.classList.add("hide-overlay");
+            guide.style.display = "none";
 
-            // 2. Try to play the audio
-            audio.volume = 0.4;
-            audio.play().catch(error => {
-                console.log("Audio play failed, but overlay removed: ", error);
+            // Start background music if the audio element exists.
+            if (audio) {
+                audio.volume = 0.4;
+
+                audio.play()
+                    .then(() => {
+                        if (musicIcon) musicIcon.textContent = "🔊";
+                    })
+                    .catch((error) => {
+                        console.log("Audio playback failed:", error);
+                        if (musicIcon) musicIcon.textContent = "🔇";
+                    });
+            }
+        }, { once: true });
+    }
+
+    // Music on/off button.
+    if (musicBtn && audio) {
+        musicBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            if (audio.paused) {
+                audio.play()
+                    .then(() => {
+                        if (musicIcon) musicIcon.textContent = "🔊";
+                    })
+                    .catch((error) => {
+                        console.log("Music could not be played:", error);
+                        if (musicIcon) musicIcon.textContent = "🔇";
+                    });
+            } else {
+                audio.pause();
+                if (musicIcon) musicIcon.textContent = "🔇";
+            }
+        });
+    }
+
+    // =========================
+    // 2. Campaign progress bar
+    // =========================
+    const progressBar = document.querySelector(".progress-bar-fill");
+
+    if (progressBar && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const percentage =
+                        progressBar.getAttribute("data-percentage") || "0%";
+
+                    progressBar.style.width = percentage;
+                } else {
+                    progressBar.style.width = "0%";
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(progressBar);
+    } else if (progressBar) {
+        progressBar.style.width =
+            progressBar.getAttribute("data-percentage") || "0%";
+    }
+
+    // =========================
+    // 3. Back-to-top button
+    // =========================
+    const backToTopButton = document.getElementById("backToTop");
+
+    if (backToTopButton) {
+        backToTopButton.style.display = "none";
+
+        window.addEventListener("scroll", () => {
+            const scrollPosition =
+                window.scrollY ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop ||
+                0;
+
+            backToTopButton.style.display =
+                scrollPosition > 20 ? "block" : "none";
+        });
+
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
         });
-    } else {
-        console.error("Missing HTML elements: check if IDs 'audio-guide' or 'bgMusic' exist.");
-    }
-});
-
-
-/**
- * Using window.onload ensures that all HTML elements (buttons and audio) 
- * are fully loaded before the script attempts to bind click events.
- */
-window.onload = function() {
-    const audio = document.getElementById('bgMusic');
-    const musicBtn = document.getElementById('music-toggle');
-    const musicIcon = document.getElementById('music-icon');
-    const guide = document.getElementById('audio-guide');
-
-    // 1. Handle Overlay Click (Start Playback)
-    if (guide) {
-        guide.onclick = function() {
-            guide.style.display = 'none'; // Hide the welcome overlay
-            
-            if (audio) {
-                audio.volume = 0.5; // Set volume to 50%
-                audio.play().then(() => {
-                    console.log("Playback started successfully.");
-                }).catch(e => {
-                    console.log("Playback failed (check file path):", e);
-                });
-                
-                // Update the icon to show it is playing
-                if (musicIcon) musicIcon.innerText = "🔊";
-            }
-        };
     }
 
-    // 2. Handle the Toggle Button (Fixes the "Cannot Stop" issue)
-    if (musicBtn) {
-        musicBtn.onclick = function(e) {
-            /** * e.stopPropagation() prevents the click from "bubbling up" 
-             * and accidentally triggering other background events.
-             */
-            e.stopPropagation(); 
-            
-            if (audio) {
-                if (audio.paused) {
-                    audio.play();
-                    if (musicIcon) musicIcon.innerText = "🔊";
-                    console.log("Music Resumed");
-                } else {
-                    audio.pause();
-                    /** * Optional: reset song to beginning 
-                     * audio.currentTime = 0; 
-                     */
-                    if (musicIcon) musicIcon.innerText = "🔇";
-                    console.log("Music Paused");
-                }
-            }
-        };
-    }
-};
+    // =========================
+    // 4. Magic canvas mouse effect
+    // =========================
+    const canvas = document.getElementById("magic-canvas");
+    const ctx = canvas ? canvas.getContext("2d") : null;
 
-/**
- * Magic Canvas Effect:
- * 1. Gradient Trail: A smooth line that changes color based on time.
- * 2. Optimized Confetti: Rare bursts to keep the UI clean.
- */
-
-const canvas = document.getElementById('magic-canvas');
-const ctx = canvas.getContext('2d');
-
-let particles = [];    // Array for the burst confetti
-let trailPoints = [];  // Array for the fading center trail lines
-
-/**
- * Syncs canvas size with the browser window
- */
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
-resize();
-
-/**
- * Confetti Class:
- * Handles the logic for individual "rare" confetti pieces.
- */
-class Confetti {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 4 + 2; // Slightly smaller for a cleaner look
-        
-        // Random HSL color for the confetti bits
-        this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
-        
-        this.vx = (Math.random() - 0.5) * 6;
-        this.vy = (Math.random() - 0.5) * 6;
-        
-        this.life = 1.0;     
-        this.decay = Math.random() * 0.03 + 0.02; // Faster decay to reduce clutter
-        this.gravity = 0.15; 
-        this.rotation = Math.random() * 360;
+    // Skip the effect safely if canvas is unavailable.
+    if (!canvas || !ctx) {
+        return;
     }
 
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.vy += this.gravity; 
-        this.life -= this.decay;  
-        this.rotation += 5;       
+    let particles = [];
+    let trailPoints = [];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
 
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation * Math.PI / 180);
-        ctx.globalAlpha = this.life;
-        ctx.fillStyle = this.color;
-        // Draw confetti rectangle
-        ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size/2);
-        ctx.restore();
-    }
-}
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
 
-/**
- * Mouse Movement Listener:
- * Manages the rainbow trail logic and the spawn rate of confetti.
- */
-window.addEventListener('mousemove', (e) => {
-    // 1. Record trail point with a time-based Hue for the rainbow effect
-    const hue = (Date.now() / 10) % 360; 
-    trailPoints.push({ x: e.clientX, y: e.clientY, age: 0, color: hue });
+    class Confetti {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 4 + 2;
+            this.color =
+                `hsl(${Math.random() * 360}, 70%, 60%)`;
 
-    // 2. Confetti spawn probability: Only 15% chance per movement
-       if (Math.random() < 0.2) { 
-        for (let i = 0; i < 5; i++) {
-        particles.push(new Confetti(e.clientX, e.clientY));
-    }
-}
-   
-});
-
-
-
-/**
- * Trail Logic:
- * Uses the saved hue to create a smooth, color-shifting line.
- */
-function drawTrail() {
-    if (trailPoints.length < 2) return;
-
-    for (let i = 1; i < trailPoints.length; i++) {
-        const p1 = trailPoints[i - 1];
-        const p2 = trailPoints[i];
-        
-        // Calculate transparency and thickness based on age
-        const opacity = 1 - (p1.age / 25);
-        const width = 4 * (1 - p1.age / 25);
-
-        ctx.beginPath();
-        // Use HSLA for the colorful trail effect
-        ctx.strokeStyle = `hsla(${p1.color}, 80%, 60%, ${opacity})`; 
-        ctx.lineWidth = width;
-        ctx.lineCap = 'round';
-        ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
-        ctx.stroke();
-    }
-}
-
-/**
- * Main Loop
- */
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Update and draw the Rainbow Trail
-    for (let i = 0; i < trailPoints.length; i++) {
-        trailPoints[i].age++;
-        if (trailPoints[i].age > 25) { 
-            trailPoints.splice(i, 1);
-            i--;
+            this.vx = (Math.random() - 0.5) * 6;
+            this.vy = (Math.random() - 0.5) * 6;
+            this.life = 1;
+            this.decay = Math.random() * 0.03 + 0.02;
+            this.gravity = 0.15;
+            this.rotation = Math.random() * 360;
         }
-    }
-    drawTrail();
 
-    // Update and draw the Rare Confetti
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-        
-        if (particles[i].life <= 0) {
-            particles.splice(i, 1);
-            i--;
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vy += this.gravity;
+            this.life -= this.decay;
+            this.rotation += 5;
+        }
+
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation * Math.PI / 180);
+            ctx.globalAlpha = Math.max(0, this.life);
+            ctx.fillStyle = this.color;
+
+            ctx.fillRect(
+                -this.size / 2,
+                -this.size / 2,
+                this.size,
+                this.size / 2
+            );
+
+            ctx.restore();
         }
     }
 
-    requestAnimationFrame(animate);
-}
+    window.addEventListener("mousemove", (event) => {
+        const hue = (Date.now() / 10) % 360;
 
-animate();
-
-document.addEventListener("DOMContentLoaded", function() {
-    const progressBar = document.querySelector('.progress-bar-fill');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Case A: Element enters the view -> Start Growing
-                const percentage = progressBar.getAttribute('data-percentage');
-                progressBar.style.width = percentage;
-            } else {
-                // Case B: Element leaves the view -> Reset to 0%
-                // This ensures the animation plays again when you scroll back
-                progressBar.style.width = "0%";
-            }
+        trailPoints.push({
+            x: event.clientX,
+            y: event.clientY,
+            age: 0,
+            color: hue
         });
-    }, {
-        // threshold: 0.2 starts the animation when 20% of the bar is visible
-        threshold: 0.2 
+
+        // Occasionally create a small confetti burst.
+        if (Math.random() < 0.2) {
+            for (let i = 0; i < 5; i++) {
+                particles.push(
+                    new Confetti(event.clientX, event.clientY)
+                );
+            }
+        }
+
+        // Prevent unlimited growth.
+        if (trailPoints.length > 100) {
+            trailPoints.splice(0, trailPoints.length - 100);
+        }
+
+        if (particles.length > 300) {
+            particles.splice(0, particles.length - 300);
+        }
     });
 
-    // Keep observing the element indefinitely
-    observer.observe(progressBar);
-});
+    function drawTrail() {
+        if (trailPoints.length < 2) return;
 
-let mybutton = document.getElementById("backToTop");
+        for (let i = 1; i < trailPoints.length; i++) {
+            const point1 = trailPoints[i - 1];
+            const point2 = trailPoints[i];
 
-// Show the button when user scrolls down 20px from the top
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
+            const opacity = Math.max(0, 1 - point1.age / 25);
+            const width = Math.max(0, 4 * (1 - point1.age / 25));
+
+            ctx.beginPath();
+
+            ctx.strokeStyle =
+                `hsla(${point1.color}, 80%, 60%, ${opacity})`;
+
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(point1.x, point1.y);
+            ctx.lineTo(point2.x, point2.y);
+            ctx.stroke();
+        }
     }
-};
 
-// Scroll to the top when the user clicks the button
-mybutton.onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scrolling effect
-};
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = trailPoints.length - 1; i >= 0; i--) {
+            trailPoints[i].age++;
+
+            if (trailPoints[i].age > 25) {
+                trailPoints.splice(i, 1);
+            }
+        }
+
+        drawTrail();
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+            particles[i].update();
+            particles[i].draw();
+
+            if (particles[i].life <= 0) {
+                particles.splice(i, 1);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
